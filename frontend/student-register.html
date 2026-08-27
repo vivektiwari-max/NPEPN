@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration - NPEPN</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>NPEPN</h1>
+
+        <nav>
+
+            <a href="index.html">Home</a>
+
+            <a href="#">Colleges</a>
+
+            <a href="#">Jobs</a>
+
+            <a href="#">Hackathons</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Registration -->
+
+    <main>
+
+        <section class="registration">
+
+            <div class="registration-heading">
+
+                <p>STUDENT REGISTRATION</p>
+
+                <h2>
+                    Join the NPEPN Placement Network
+                </h2>
+
+                <span>
+                    Register your professional education,
+                    skills and placement information.
+                </span>
+
+            </div>
+
+
+            <form id = "studentForm">
+
+
+                <!-- Personal Information -->
+
+                <div class="form-section">
+
+                    <h3>Personal Information</h3>
+
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                    >
+
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                    >
+
+
+                    <label for="phone">
+                        Mobile Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter mobile number"
+                    >
+
+                </div>
+
+
+                <!-- Education -->
+
+                <div class="form-section">
+
+                    <h3>Education Information</h3>
+
+
+                    <label for="degree">
+                        Professional Degree
+                    </label>
+
+                    <select id="degree">
+
+                        <option value="">
+                            Select Degree
+                        </option>
+
+                        <option>
+                            B.Tech
+                        </option>
+
+                        <option>
+                            BCA
+                        </option>
+
+                        <option>
+                            MCA
+                        </option>
+
+                        <option>
+                            B.Pharm
+                        </option>
+
+                        <option>
+                            BBA
+                        </option>
+
+                    </select>
+
+
+                    <label for="college">
+                        College Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="college"
+                        placeholder="Enter college name"
+                    >
+
+
+                    <label for="district">
+                        District
+                    </label>
+
+                    <select id="district">
+
+                        <option value="">
+                            Select District
+                        </option>
+
+                        <option>
+                            Jaunpur
+                        </option>
+
+                        <option>
+                            Lucknow
+                        </option>
+
+                        <option>
+                            Prayagraj
+                        </option>
+
+                        <option>
+                            Varanasi
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Skills -->
+
+                <div class="form-section">
+
+                    <h3>Skills</h3>
+
+
+                    <label for="skills">
+                        Technical Skills
+                    </label>
+
+                    <textarea
+                        id="skills"
+                        placeholder="Example: Python, Java, SQL, HTML, CSS"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button type="submit">
+                    Register as Student
+                </button>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 NPEPN. All rights reserved.
+        </p>
+
+    </footer>
+
+<script src="script.js"></script>
+</body>
+
+</html>

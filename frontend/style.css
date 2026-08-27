@@ -1,0 +1,699 @@
+/* ========================================
+   NPEPN - Main Website Styles
+   ======================================== */
+
+
+/* ---------- Basic Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ---------- Body ---------- */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+
+/* ---------- Header ---------- */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 60px;
+
+    background: white;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+/* ---------- Logo ---------- */
+
+header h1 {
+    font-size: 28px;
+    color: #172033;
+}
+
+
+/* ---------- Navigation ---------- */
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #172033;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+
+nav a:hover {
+    color: #2563eb;
+}
+
+
+/* ---------- Main ---------- */
+
+main {
+    text-align: center;
+}
+
+
+/* ---------- Hero Section ---------- */
+
+section {
+    padding: 110px 20px 120px;
+}
+
+
+/* ---------- Tagline ---------- */
+
+section > p:first-child {
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    color: #2563eb;
+
+    margin-bottom: 20px;
+}
+
+
+/* ---------- Main Heading ---------- */
+
+section h1 {
+    max-width: 900px;
+
+    margin: 0 auto 25px;
+
+    font-size: 52px;
+
+    line-height: 1.15;
+
+    color: #172033;
+}
+
+
+/* ---------- Description ---------- */
+
+section p {
+    color: #667085;
+
+    font-size: 19px;
+
+    max-width: 750px;
+
+    margin: 0 auto;
+}
+
+
+/* ---------- Buttons Container ---------- */
+
+section button {
+    margin: 35px 6px 0;
+
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+/* ---------- Button Hover ---------- */
+
+section button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------- Footer ---------- */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    background: white;
+
+    border-top: 1px solid #e5e7eb;
+
+    color: #667085;
+
+    font-size: 14px;
+}
+
+
+/* ---------- Mobile Responsive ---------- */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    section {
+        padding: 70px 20px;
+    }
+
+
+    section h1 {
+        font-size: 38px;
+    }
+
+
+    section p {
+        font-size: 17px;
+    }
+
+
+    section button {
+        width: 90%;
+
+        max-width: 300px;
+
+        margin-top: 15px;
+    }
+
+}
+/* ---------- Statistics ---------- */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    max-width: 1100px;
+    margin: 0 auto;
+
+    padding: 70px 20px;
+}
+
+.stat-card {
+    background: white;
+
+    padding: 30px 20px;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.stat-card h2 {
+    font-size: 36px;
+    color: #2563eb;
+
+    margin-bottom: 8px;
+}
+
+.stat-card p {
+    font-size: 15px;
+    color: #667085;
+}
+
+/* ========================================
+   HOW NPEPN WORKS
+   ======================================== */
+
+.how-it-works {
+    background: white;
+    padding: 100px 20px;
+}
+
+
+/* Section Heading */
+
+.section-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 60px;
+}
+
+
+.section-heading > p {
+    color: #2563eb;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+
+.section-heading h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    color: #172033;
+    margin-bottom: 20px;
+}
+
+
+.section-heading span {
+    color: #667085;
+    font-size: 17px;
+}
+
+
+/* Steps */
+
+.steps {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* Step Card */
+
+.step-card {
+    padding: 30px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    transition: 0.2s;
+}
+
+
+.step-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #2563eb;
+}
+
+
+/* Number */
+
+.step-number {
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+
+/* Title */
+
+.step-card h3 {
+    font-size: 20px;
+
+    margin-bottom: 12px;
+
+    color: #172033;
+}
+
+
+/* Description */
+
+.step-card p {
+    color: #667085;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+}
+/* ========================================
+   DISTRICT PLACEMENT NETWORK
+   ======================================== */
+
+.district-network {
+    background: #f5f7fb;
+    padding: 100px 20px;
+}
+
+
+/* Network Flow */
+
+.network-flow {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+/* Network Card */
+
+.network-card {
+    width: 240px;
+    min-height: 230px;
+
+    background: white;
+
+    padding: 30px 25px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    transition: 0.2s;
+}
+
+
+.network-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #2563eb;
+}
+
+
+/* Number */
+
+.network-icon {
+    width: 50px;
+    height: 50px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+}
+
+
+/* Title */
+
+.network-card h3 {
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+
+/* Description */
+
+.network-card p {
+    color: #667085;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* Arrow */
+
+.flow-arrow {
+    font-size: 28px;
+
+    color: #2563eb;
+
+    font-weight: bold;
+}
+
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+    .network-flow {
+        flex-direction: column;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .network-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+}
+/* ========================================
+   STUDENT REGISTRATION
+   ======================================== */
+
+.registration {
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 80px 20px;
+}
+
+
+/* Heading */
+
+.registration-heading {
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+
+.registration-heading > p {
+    color: #2563eb;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+
+.registration-heading h2 {
+    font-size: 40px;
+
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+}
+
+
+.registration-heading span {
+    color: #667085;
+
+    font-size: 17px;
+}
+
+
+/* Form */
+
+form {
+    background: white;
+
+    padding: 40px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+}
+
+
+/* Form Section */
+
+.form-section {
+    margin-bottom: 35px;
+}
+
+
+.form-section h3 {
+    font-size: 20px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Labels */
+
+form label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    margin-top: 18px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* Inputs */
+
+form input,
+form select,
+form textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #d0d5dd;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+/* Textarea */
+
+form textarea {
+
+    min-height: 120px;
+
+    resize: vertical;
+
+}
+
+
+/* Focus */
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+
+    outline: none;
+
+    border-color: #2563eb;
+
+}
+
+
+/* Submit Button */
+
+form button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+form button:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+/* Student Button Link */
+
+.primary-button {
+
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    margin: 35px 6px 0;
+
+    background: #2563eb;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+
+}
+
+
+.primary-button:hover {
+
+    background: #1d4ed8;
+
+}
