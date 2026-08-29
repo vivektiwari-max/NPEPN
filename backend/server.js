@@ -133,9 +133,19 @@ app.get("/api/colleges", async (req, res) => {
         const values = [];
         let index = 1;
 
-        // College name search
+        // College search
+        // College search
         if (search) {
-            query += ` AND college_name ILIKE $${index}`;
+            query += `
+        AND CONCAT_WS(
+            ' ',
+            college_name,
+            city,
+            district,
+            state
+        ) ILIKE $${index}
+    `;
+
             values.push(`%${search}%`);
             index++;
         }
@@ -164,7 +174,7 @@ app.get("/api/colleges", async (req, res) => {
         res.status(200).json({
             colleges: result.rows
         });
-        
+
 
     } catch (error) {
 
@@ -220,27 +230,27 @@ app.post("/api/login", async (req, res) => {
         }
 
         // Login successful
-       const token = jwt.sign(
-    {
-        id: user.id,
-        email: user.email,
-        role: user.role
-    },
-    process.env.JWT_SECRET,
-    {
-        expiresIn: "1h"
-    }
-);
+        const token = jwt.sign(
+            {
+                id: user.id,
+                email: user.email,
+                role: user.role
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: "1h"
+            }
+        );
 
-res.status(200).json({
-    message: "Login successful!",
-    token: token,
-    user: {
-        id: user.id,
-        email: user.email,
-        role: user.role
-    }
-});
+        res.status(200).json({
+            message: "Login successful!",
+            token: token,
+            user: {
+                id: user.id,
+                email: user.email,
+                role: user.role
+            }
+        });
 
     } catch (error) {
 
