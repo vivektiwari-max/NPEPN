@@ -119,11 +119,9 @@ app.get("/api/students", async (req, res) => {
 // ===============================
 
 app.get("/api/colleges", async (req, res) => {
-
     const { search, state, district } = req.query;
 
     try {
-
         let query = `
             SELECT id, college_name, state, district, city, college_type
             FROM colleges
@@ -134,32 +132,37 @@ app.get("/api/colleges", async (req, res) => {
         let index = 1;
 
         // College search
-        // College search
-        if (search) {
-            query += `
-        AND CONCAT_WS(
-            ' ',
-            college_name,
-            city,
-            district,
-            state
-        ) ILIKE $${index}
-    `;
+        if (search && search.trim()) {
+            const searchWords = search
+                .trim()
+                .split(/\s+/)
+                .filter(word => word.length > 1);
 
-            values.push(`%${search}%`);
-            index++;
+            searchWords.forEach((word) => {
+                query += `
+                    AND (
+                        college_name ILIKE $${index}
+                        OR state ILIKE $${index}
+                        OR district ILIKE $${index}
+                        OR city ILIKE $${index}
+                    )
+                `;
+
+                values.push(`%${word}%`);
+                index++;
+            });
         }
 
         // State filter
         if (state) {
-            query += ` AND state = $${index}`;
+            query += ` AND state ILIKE $${index}`;
             values.push(state);
             index++;
         }
 
         // District filter
         if (district) {
-            query += ` AND district = $${index}`;
+            query += ` AND district ILIKE $${index}`;
             values.push(district);
             index++;
         }
@@ -169,15 +172,19 @@ app.get("/api/colleges", async (req, res) => {
             LIMIT 100
         `;
 
+        console.log("================================");
+        console.log("SEARCH:", search);
+        console.log("QUERY:", query);
+        console.log("VALUES:", values);
+        console.log("================================");
+
         const result = await pool.query(query, values);
 
         res.status(200).json({
             colleges: result.rows
         });
 
-
     } catch (error) {
-
         console.error("College search error:", error.message);
 
         res.status(500).json({
@@ -185,7 +192,6 @@ app.get("/api/colleges", async (req, res) => {
         });
     }
 });
-
 // ===============================
 // STUDENT LOGIN API
 // ===============================
