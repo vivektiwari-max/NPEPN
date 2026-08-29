@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Dashboard | NPEPN</title>
+
+    <link rel="stylesheet" href="college-dashboard.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         DASHBOARD LAYOUT
+    ========================================== -->
+
+    <div class="dashboard-layout">
+
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="brand-logo">
+                    N
+                </div>
+
+                <div class="brand-info">
+                    <h2>NPEPN</h2>
+                    <span>College Portal</span>
+                </div>
+
+            </div>
+
+
+            <!-- MAIN MENU -->
+
+            <div class="menu-title">
+                MAIN
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="#" class="menu-item active">
+                    <span class="menu-icon">▦</span>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">▣</span>
+                    <span>Students</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">♧</span>
+                    <span>Companies</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">▤</span>
+                    <span>Placement Drives</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">⌑</span>
+                    <span>Applications</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">✓</span>
+                    <span>Placements</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">♢</span>
+                    <span>Notifications</span>
+                </a>
+
+            </nav>
+
+
+            <!-- PROFILE -->
+
+            <div class="menu-title profile-title">
+                PROFILE
+            </div>
+
+            <nav class="sidebar-menu">
+
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">○</span>
+                    <span>College Profile</span>
+                </a>
+
+                <a href="#" class="menu-item">
+                    <span class="menu-icon">⚙</span>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+
+            <!-- PROFILE COMPLETION -->
+
+            <div class="profile-completion">
+
+                <h3>Complete Your Profile</h3>
+
+                <p>
+                    Complete your institution profile
+                    to improve visibility.
+                </p>
+
+                <button type="button">
+                    Update Profile →
+                </button>
+
+            </div>
+
+
+            <!-- LOGOUT -->
+
+            <a href="../index.html" class="logout-link">
+                ↪ Logout
+            </a>
+
+        </aside>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================
+                 TOP HEADER
+            ================================== -->
+
+            <header class="top-header">
+
+                <div class="welcome-text">
+                    Welcome back, <strong>College!</strong>
+                </div>
+
+
+                <div class="header-actions">
+
+                    <button
+                        type="button"
+                        class="notification-button"
+                        aria-label="Notifications"
+                    >
+                        ♢
+                        <span class="notification-count">3</span>
+                    </button>
+
+
+                    <div class="college-user">
+
+                        <div class="user-avatar">
+                            C
+                        </div>
+
+                        <div class="user-details">
+                            <strong>College</strong>
+                            <span>Administrator</span>
+                        </div>
+
+                        <span class="dropdown-arrow">
+                            ▾
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================
+                 DASHBOARD CONTENT
+            ================================== -->
+
+            <section class="dashboard-content">
+
+
+                <!-- =================================
+                     COLLEGE PROFILE BANNER
+                ================================== -->
+
+                <section class="college-profile-banner">
+
+                    <div class="college-profile-left">
+
+                        <div class="college-avatar">
+                            C
+
+                            <span class="online-dot"></span>
+                        </div>
+
+
+                        <div class="college-profile-info">
+
+                            <div class="college-name-row">
+
+                                <h1>
+                                    College Name
+                                </h1>
+
+                                <span class="verified-badge">
+                                    ✓ Verified College
+                                </span>
+
+                            </div>
+
+
+                            <div class="college-details">
+
+                                <span>
+                                    ✉ college@example.edu
+                                </span>
+
+                                <span>
+                                    ☎ +91 XXXXX XXXXX
+                                </span>
+
+                            </div>
+
+
+                            <div class="college-meta">
+
+                                <span>
+                                    ◉ University Name
+                                </span>
+
+                                <span>
+                                    ◉ District
+                                </span>
+
+                                <span>
+                                    ◉ State
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="edit-profile-btn"
+                    >
+                        Edit Profile ✎
+                    </button>
+
+                </section>
+
+
+                <!-- =================================
+                     STATISTICS
+                ================================== -->
+
+                <section class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon blue">
+                            ▣
+                        </div>
+
+                        <div class="stat-info">
+
+                            <h2>1,248</h2>
+
+                            <p>Total Students</p>
+
+                            <span>
+                                Registered students
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon green">
+                            ♧
+                        </div>
+
+                        <div class="stat-info">
+
+                            <h2>38</h2>
+
+                            <p>Companies</p>
+
+                            <span>
+                                Connected companies
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon orange">
+                            ◉
+                        </div>
+
+                        <div class="stat-info">
+
+                            <h2>12</h2>
+
+                            <p>Placement Drives</p>
+
+                            <span>
+                                Active & completed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon purple">
+                            ♜
+                        </div>
+
+                        <div class="stat-info">
+
+                            <h2>486</h2>
+
+                            <p>Students Placed</p>
+
+                            <span>
+                                Placement achieved
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     LOWER CONTENT
+                ================================== -->
+
+                <section class="dashboard-grid">
+
+
+                    <!-- RECENT STUDENT REGISTRATIONS -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <h2>Recent Student Registrations</h2>
+                                <p>
+                                    Recently registered students
+                                </p>
+                            </div>
+
+                            <a href="#">
+                                View All
+                            </a>
+
+                        </div>
+
+
+                        <div class="student-list">
+
+
+                            <div class="student-row">
+
+                                <div class="student-avatar">
+                                    A
+                                </div>
+
+                                <div class="student-info">
+
+                                    <strong>
+                                        Student Name
+                                    </strong>
+
+                                    <span>
+                                        B.Tech • Computer Science
+                                    </span>
+
+                                </div>
+
+                                <span class="status verified">
+                                    Verified
+                                </span>
+
+                            </div>
+
+
+                            <div class="student-row">
+
+                                <div class="student-avatar">
+                                    R
+                                </div>
+
+                                <div class="student-info">
+
+                                    <strong>
+                                        Rahul Sharma
+                                    </strong>
+
+                                    <span>
+                                        B.Tech • Information Technology
+                                    </span>
+
+                                </div>
+
+                                <span class="status verified">
+                                    Verified
+                                </span>
+
+                            </div>
+
+
+                            <div class="student-row">
+
+                                <div class="student-avatar">
+                                    P
+                                </div>
+
+                                <div class="student-info">
+
+                                    <strong>
+                                        Priya Singh
+                                    </strong>
+
+                                    <span>
+                                        B.Tech • Electronics
+                                    </span>
+
+                                </div>
+
+                                <span class="status pending">
+                                    Pending
+                                </span>
+
+                            </div>
+
+
+                            <div class="student-row">
+
+                                <div class="student-avatar">
+                                    V
+                                </div>
+
+                                <div class="student-info">
+
+                                    <strong>
+                                        Vivek Kumar
+                                    </strong>
+
+                                    <span>
+                                        B.Tech • Mechanical
+                                    </span>
+
+                                </div>
+
+                                <span class="status verified">
+                                    Verified
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- UPCOMING PLACEMENT DRIVES -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <h2>Upcoming Placement Drives</h2>
+                                <p>
+                                    Latest company activities
+                                </p>
+                            </div>
+
+                            <a href="#">
+                                View All
+                            </a>
+
+                        </div>
+
+
+                        <div class="drive-list">
+
+
+                            <div class="drive-row">
+
+                                <div class="company-logo">
+                                    M
+                                </div>
+
+                                <div class="drive-info">
+
+                                    <strong>
+                                        Microsoft
+                                    </strong>
+
+                                    <span>
+                                        Software Development
+                                    </span>
+
+                                </div>
+
+                                <div class="drive-date">
+
+                                    <strong>
+                                        28
+                                    </strong>
+
+                                    <span>
+                                        MAY
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="drive-row">
+
+                                <div class="company-logo">
+                                    T
+                                </div>
+
+                                <div class="drive-info">
+
+                                    <strong>
+                                        TCS
+                                    </strong>
+
+                                    <span>
+                                        Graduate Engineer
+                                    </span>
+
+                                </div>
+
+                                <div class="drive-date">
+
+                                    <strong>
+                                        03
+                                    </strong>
+
+                                    <span>
+                                        JUN
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="drive-row">
+
+                                <div class="company-logo">
+                                    I
+                                </div>
+
+                                <div class="drive-info">
+
+                                    <strong>
+                                        Infosys
+                                    </strong>
+
+                                    <span>
+                                        System Engineer
+                                    </span>
+
+                                </div>
+
+                                <div class="drive-date">
+
+                                    <strong>
+                                        08
+                                    </strong>
+
+                                    <span>
+                                        JUN
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </section>
+
+
+                <!-- =================================
+                     BOTTOM SECTION
+                ================================== -->
+
+                <section class="bottom-grid">
+
+
+                    <!-- PLACEMENT OVERVIEW -->
+
+                    <div class="dashboard-card placement-overview">
+
+                        <div class="card-header">
+
+                            <div>
+                                <h2>Placement Overview</h2>
+                                <p>
+                                    Current academic year
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="placement-stats">
+
+                            <div>
+                                <strong>486</strong>
+                                <span>Placed</span>
+                            </div>
+
+                            <div>
+                                <strong>312</strong>
+                                <span>Looking for Placement</span>
+                            </div>
+
+                            <div>
+                                <strong>450</strong>
+                                <span>Eligible Students</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NOTIFICATIONS -->
+
+                    <div class="dashboard-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <h2>Recent Notifications</h2>
+                                <p>
+                                    Important updates
+                                </p>
+                            </div>
+
+                            <a href="#">
+                                View All
+                            </a>
+
+                        </div>
+
+
+                        <div class="notification-list">
+
+                            <div class="notification-item">
+
+                                <span class="notification-dot"></span>
+
+                                <div>
+                                    <strong>
+                                        New placement drive announced
+                                    </strong>
+
+                                    <p>
+                                        Microsoft has opened registrations.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="notification-item">
+
+                                <span class="notification-dot"></span>
+
+                                <div>
+                                    <strong>
+                                        Student verification completed
+                                    </strong>
+
+                                    <p>
+                                        24 student profiles were verified.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="notification-item">
+
+                                <span class="notification-dot"></span>
+
+                                <div>
+                                    <strong>
+                                        NPEPN circular available
+                                    </strong>
+
+                                    <p>
+                                        New placement guidelines released.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- MOBILE MENU OVERLAY -->
+
+    <div
+        class="sidebar-overlay"
+        id="sidebarOverlay"
+    ></div>
+
+
+    <script src="college-dashboard.js"></script>
+
+</body>
+</html>

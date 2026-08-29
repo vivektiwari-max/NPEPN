@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Registration | NPEPN</title>
+
+    <link rel="stylesheet" href="college-registration.css">
+</head>
+
+<body>
+
+    <header class="main-navbar">
+
+    <a href="../index.html" class="navbar-logo">
+        NPEPN
+    </a>
+
+    <nav class="navbar-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#colleges">Colleges</a>
+        <a href="../index.html#jobs">Jobs</a>
+        <a href="../index.html#hackathons">Hackathons</a>
+    </nav>
+
+</header>
+
+    <main class="registration-page">
+
+        <section class="registration-card">
+
+            <!-- Header -->
+            <div class="registration-header">
+
+                <a href="../index.html" class="brand">
+                    <span class="brand-logo">N</span>
+                    <span>NPEPN</span>
+                </a>
+
+                <h1>College Registration</h1>
+
+                <p>
+                    Register your institution with the National Professional
+                    Education & Placement Network
+                </p>
+
+            </div>
+
+
+            <!-- Registration Form -->
+            <form id="collegeRegistrationForm">
+
+                <!-- Institution Information -->
+                <div class="form-section">
+
+                    <div class="section-heading">
+                        <h2>Institution Information</h2>
+                        <p>Enter your official college details.</p>
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group full-width">
+                            <label for="collegeName">
+                                College / Institution Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="collegeName"
+                                name="collegeName"
+                                placeholder="Enter official institution name"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="collegeCode">
+                                College / Institute Code
+                            </label>
+
+                            <input
+                                type="text"
+                                id="collegeCode"
+                                name="collegeCode"
+                                placeholder="Enter institute code"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="university">
+                                University
+                            </label>
+
+                            <input
+                                type="text"
+                                id="university"
+                                name="university"
+                                placeholder="Enter university name"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="institutionType">
+                                Institution Type
+                            </label>
+
+                            <select
+                                id="institutionType"
+                                name="institutionType"
+                                required
+                            >
+                                <option value="">
+                                    Select institution type
+                                </option>
+
+                                <option value="government">
+                                    Government
+                                </option>
+
+                                <option value="government-aided">
+                                    Government Aided
+                                </option>
+
+                                <option value="private">
+                                    Private
+                                </option>
+
+                                <option value="autonomous">
+                                    Autonomous
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="affiliation">
+                                Affiliation / Recognition
+                            </label>
+
+                            <input
+                                type="text"
+                                id="affiliation"
+                                name="affiliation"
+                                placeholder="Enter affiliation details"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Location -->
+                <div class="form-section">
+
+                    <div class="section-heading">
+                        <h2>Institution Location</h2>
+                        <p>Provide the official location of the institution.</p>
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="state">
+                                State
+                            </label>
+
+                            <select
+                                id="state"
+                                name="state"
+                                required
+                            >
+                                <option value="">
+                                    Select state
+                                </option>
+
+                                <option value="uttar-pradesh">
+                                    Uttar Pradesh
+                                </option>
+
+                                <option value="madhya-pradesh">
+                                    Madhya Pradesh
+                                </option>
+
+                                <option value="bihar">
+                                    Bihar
+                                </option>
+
+                                <option value="rajasthan">
+                                    Rajasthan
+                                </option>
+
+                                <option value="delhi">
+                                    Delhi
+                                </option>
+
+                                <option value="maharashtra">
+                                    Maharashtra
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="district">
+                                District
+                            </label>
+
+                            <input
+                                type="text"
+                                id="district"
+                                name="district"
+                                placeholder="Enter district"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group full-width">
+                            <label for="address">
+                                Complete Address
+                            </label>
+
+                            <textarea
+                                id="address"
+                                name="address"
+                                rows="4"
+                                placeholder="Enter complete institution address"
+                                required
+                            ></textarea>
+                        </div>
+
+
+                        <div class="form-group full-width">
+                            <label for="website">
+                                Official Website
+                            </label>
+
+                            <input
+                                type="url"
+                                id="website"
+                                name="website"
+                                placeholder="https://www.example.edu"
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Authorized Person -->
+                <div class="form-section">
+
+                    <div class="section-heading">
+                        <h2>Authorized Person</h2>
+                        <p>
+                            Details of the person authorized to manage the
+                            institution's NPEPN account.
+                        </p>
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="authorizedName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="authorizedName"
+                                name="authorizedName"
+                                placeholder="Enter full name"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="designation">
+                                Designation
+                            </label>
+
+                            <input
+                                type="text"
+                                id="designation"
+                                name="designation"
+                                placeholder="e.g. Training & Placement Officer"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="officialEmail">
+                                Official Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="officialEmail"
+                                name="officialEmail"
+                                placeholder="official@college.edu"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="officialMobile">
+                                Official Mobile Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="officialMobile"
+                                name="officialMobile"
+                                placeholder="Enter 10 digit mobile number"
+                                maxlength="10"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Account -->
+                <div class="form-section">
+
+                    <div class="section-heading">
+                        <h2>Account Security</h2>
+                        <p>Create credentials for the college account.</p>
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Create a strong password"
+                                required
+                            >
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm password"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Verification Notice -->
+                <div class="verification-notice">
+
+                    <div class="notice-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <h3>Verification Required</h3>
+
+                        <p>
+                            After registration, your institution account will
+                            remain pending until it is verified and approved
+                            by the NPEPN administration.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Terms -->
+                <div class="terms-box">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            required
+                        >
+
+                        <span>
+                            I confirm that I am authorized to register this
+                            institution and that the information provided is
+                            accurate.
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Submit -->
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    Submit Registration
+                </button>
+
+
+                <!-- Login -->
+                <div class="login-link">
+
+                    Already registered?
+
+                    <a href="college-login.html">
+                        College Login
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="college-registration.js"></script>
+
+</body>
+</html>

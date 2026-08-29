@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DPC Login | NPEPN</title>
+
+    <link rel="stylesheet" href="dpc-login.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="main-navbar">
+
+        <a href="../index.html" class="navbar-logo">
+            NPEPN
+        </a>
+
+        <nav class="navbar-links">
+
+            <a href="../index.html">Home</a>
+
+            <a href="../index.html#about">About</a>
+
+            <a href="../index.html#analytics">Analytics</a>
+
+            <a href="dpc-registration.html">
+                Register DPC
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- LOGIN PAGE -->
+    <main class="login-page">
+
+        <div class="login-container">
+
+            <!-- HEADER -->
+
+            <div class="page-header">
+
+                <p class="page-label">
+                    NPEPN OFFICIAL PORTAL
+                </p>
+
+                <h1>
+                    District Placement Cell Login
+                </h1>
+
+                <p>
+                    Login to manage district-level training,
+                    student applications, examinations, results
+                    and seat allocation.
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN CARD -->
+
+            <div class="login-card">
+
+                <div class="login-card-header">
+
+                    <div class="login-icon">
+                        DPC
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Welcome Back
+                        </h2>
+
+                        <p>
+                            Enter your official credentials to continue.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <form id="dpcLoginForm">
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Official Email
+                            <span class="required">*</span>
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter registered official email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="form-group">
+
+                        <div class="password-label">
+
+                            <label for="password">
+                                Password
+                                <span class="required">*</span>
+                            </label>
+
+                            <a href="#" id="forgotPassword">
+                                Forgot Password?
+                            </a>
+
+                        </div>
+
+                        <div class="password-wrapper">
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                id="togglePassword"
+                                class="toggle-password"
+                                aria-label="Show password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- REMEMBER -->
+
+                    <div class="remember-row">
+
+                        <label class="remember-option">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMe"
+                                name="rememberMe"
+                            >
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="login-btn"
+                    >
+                        Login to DPC Portal
+                    </button>
+
+
+                </form>
+
+
+                <!-- REGISTER -->
+
+                <div class="register-link">
+
+                    Don't have a DPC account?
+
+                    <a href="dpc-registration.html">
+                        Register District Placement Cell
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- VERIFICATION NOTICE -->
+
+            <div class="verification-notice">
+
+                <div class="notice-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Verified Account Required
+                    </strong>
+
+                    <p>
+                        Only approved District Placement Cells
+                        can access the DPC dashboard. Newly registered
+                        accounts must complete NPEPN verification first.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BACK HOME -->
+
+            <a
+                href="../index.html"
+                class="back-home"
+            >
+                ← Back to NPEPN Home
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <script src="dpc-login.js"></script>
+
+</body>
+</html>

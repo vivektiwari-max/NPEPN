@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DPC Dashboard | NPEPN</title>
+
+    <link rel="stylesheet" href="dpc-dashboard.css">
+</head>
+
+<body>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+
+            <a href="../index.html">
+                NPEPN
+            </a>
+
+            <span>
+                District Placement Cell
+            </span>
+
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="#" class="menu-item active">
+                <span class="menu-icon">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">◫</span>
+                <span>Training Openings</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">◉</span>
+                <span>Applications</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">▣</span>
+                <span>Examinations</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">✓</span>
+                <span>Results</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">▤</span>
+                <span>Seat Allocation</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">♙</span>
+                <span>Students</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">◈</span>
+                <span>Payments</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">⚙</span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html" class="home-link">
+                ← Back to NPEPN Home
+            </a>
+
+            <button
+                type="button"
+                class="logout-btn"
+                id="logoutBtn"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+
+        <!-- TOP HEADER -->
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <div>
+
+                    <p class="header-label">
+                        DISTRICT PLACEMENT CELL
+                    </p>
+
+                    <h1>
+                        DPC Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button
+                    type="button"
+                    class="notification-button"
+                    id="notificationButton"
+                    aria-label="Notifications"
+                >
+                    ♢
+                </button>
+
+
+                <div class="dpc-user">
+
+                    <div class="user-avatar">
+                        DPC
+                    </div>
+
+                    <div class="user-details">
+
+                        <strong id="dpcNameDisplay">
+                            District Placement Cell
+                        </strong>
+
+                        <span id="districtDisplay">
+                            District Administration
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD CONTENT -->
+        <section class="dashboard-content">
+
+
+            <!-- WELCOME -->
+            <div class="welcome-section">
+
+                <div>
+
+                    <p class="welcome-label">
+                        DPC PORTAL
+                    </p>
+
+                    <h2>
+                        Welcome to your dashboard
+                    </h2>
+
+                    <p>
+                        Manage district-level training programs,
+                        student applications and placement activities.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-action"
+                    id="createOpeningBtn"
+                >
+                    + Create Training Opening
+                </button>
+
+            </div>
+
+
+            <!-- VERIFICATION STATUS -->
+            <div class="verification-status">
+
+                <div class="status-left">
+
+                    <div class="status-icon">
+                        !
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            DPC Account Verification
+                        </strong>
+
+                        <p id="verificationMessage">
+                            Your account verification status will
+                            appear here after registration.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <span
+                    class="status-badge pending"
+                    id="verificationBadge"
+                >
+                    Pending
+                </span>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Active Openings
+                        </span>
+
+                        <div class="stat-icon">
+                            ◫
+                        </div>
+
+                    </div>
+
+                    <strong id="activeOpenings">
+                        0
+                    </strong>
+
+                    <p>
+                        Currently available training programs
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Applications
+                        </span>
+
+                        <div class="stat-icon">
+                            ◉
+                        </div>
+
+                    </div>
+
+                    <strong id="totalApplications">
+                        0
+                    </strong>
+
+                    <p>
+                        Student applications received
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Students Selected
+                        </span>
+
+                        <div class="stat-icon">
+                            ✓
+                        </div>
+
+                    </div>
+
+                    <strong id="selectedStudents">
+                        0
+                    </strong>
+
+                    <p>
+                        Students qualified for training
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Seats Available
+                        </span>
+
+                        <div class="stat-icon">
+                            ▤
+                        </div>
+
+                    </div>
+
+                    <strong id="availableSeats">
+                        0
+                    </strong>
+
+                    <p>
+                        Training seats currently available
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAIN DASHBOARD GRID -->
+            <div class="dashboard-grid">
+
+
+                <!-- TRAINING OPENINGS -->
+                <div class="dashboard-card large-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Training Openings
+                            </h3>
+
+                            <p>
+                                Manage currently published training programs.
+                            </p>
+
+                        </div>
+
+                        <a href="#">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="empty-state" id="openingsEmptyState">
+
+                        <div class="empty-icon">
+                            ◫
+                        </div>
+
+                        <h4>
+                            No training openings yet
+                        </h4>
+
+                        <p>
+                            Create a training opening when registration
+                            is ready for students.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="secondary-action"
+                            id="emptyCreateOpeningBtn"
+                        >
+                            Create Opening
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Quick Actions
+                            </h3>
+
+                            <p>
+                                Frequently used DPC operations.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions">
+
+
+                        <button
+                            type="button"
+                            class="quick-action"
+                            id="openingAction"
+                        >
+
+                            <span class="quick-icon">
+                                +
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    Create Training Opening
+                                </strong>
+
+                                <small>
+                                    Open registration for students
+                                </small>
+
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="quick-action"
+                            id="applicationAction"
+                        >
+
+                            <span class="quick-icon">
+                                ◉
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    Review Applications
+                                </strong>
+
+                                <small>
+                                    Check submitted student applications
+                                </small>
+
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="quick-action"
+                            id="examAction"
+                        >
+
+                            <span class="quick-icon">
+                                ▣
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    Manage Examination
+                                </strong>
+
+                                <small>
+                                    Schedule and conduct examinations
+                                </small>
+
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="quick-action"
+                            id="resultAction"
+                        >
+
+                            <span class="quick-icon">
+                                ✓
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    Publish Results
+                                </strong>
+
+                                <small>
+                                    Manage examination results
+                                </small>
+
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- APPLICATIONS -->
+            <div class="dashboard-grid">
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Recent Applications
+                            </h3>
+
+                            <p>
+                                Latest student applications for training.
+                            </p>
+
+                        </div>
+
+                        <a href="#">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="empty-state small-empty">
+
+                        <div class="empty-icon">
+                            ◉
+                        </div>
+
+                        <h4>
+                            No applications yet
+                        </h4>
+
+                        <p>
+                            Student applications will appear here
+                            when a training opening is active.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- UPCOMING ACTIVITIES -->
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Upcoming Activities
+                            </h3>
+
+                            <p>
+                                Important training and examination activities.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="empty-state small-empty">
+
+                        <div class="empty-icon">
+                            ◷
+                        </div>
+
+                        <h4>
+                            No upcoming activities
+                        </h4>
+
+                        <p>
+                            Scheduled examinations, training and
+                            other activities will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SYSTEM INFORMATION -->
+            <div class="dashboard-card system-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            DPC Responsibilities
+                        </h3>
+
+                        <p>
+                            Main operations available through the NPEPN portal.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="responsibility-grid">
+
+                    <div class="responsibility-item">
+
+                        <span>
+                            01
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Training Openings
+                            </strong>
+
+                            <p>
+                                Open and manage district training registrations.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="responsibility-item">
+
+                        <span>
+                            02
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Student Applications
+                            </strong>
+
+                            <p>
+                                Review documents and manage eligible applicants.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="responsibility-item">
+
+                        <span>
+                            03
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Examination & Results
+                            </strong>
+
+                            <p>
+                                Conduct examinations and publish results.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="responsibility-item">
+
+                        <span>
+                            04
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Seat Allocation
+                            </strong>
+
+                            <p>
+                                Manage seat availability and student allocation.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="dpc-dashboard.js"></script>
+
+</body>
+
+</html>

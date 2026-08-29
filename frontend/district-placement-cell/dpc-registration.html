@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DPC Registration | NPEPN</title>
+
+    <link rel="stylesheet" href="dpc-registration.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="main-navbar">
+
+        <a href="../index.html" class="navbar-logo">
+            NPEPN
+        </a>
+
+        <nav class="navbar-links">
+
+            <a href="../index.html">Home</a>
+
+            <a href="../index.html#about">About</a>
+
+            <a href="../index.html#analytics">Analytics</a>
+
+            <a href="dpc-login.html">DPC Login</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- REGISTRATION PAGE -->
+    <main class="registration-page">
+
+        <div class="registration-container">
+
+            <!-- PAGE HEADER -->
+
+            <div class="page-header">
+
+                <p class="page-label">
+                    NPEPN OFFICIAL PORTAL
+                </p>
+
+                <h1>
+                    District Placement Cell Registration
+                </h1>
+
+                <p>
+                    Register your District Placement Cell to manage
+                    training programs, student applications, examinations,
+                    results and seat allocation through NPEPN.
+                </p>
+
+            </div>
+
+
+            <!-- REGISTRATION CARD -->
+
+            <div class="registration-card">
+
+                <form id="dpcRegistrationForm">
+
+
+                    <!-- =================================
+                         DISTRICT DETAILS
+                    ================================== -->
+
+                    <section class="form-section">
+
+                        <div class="section-heading">
+
+                            <h2>
+                                District Placement Cell Details
+                            </h2>
+
+                            <p>
+                                Enter the official details of your district placement cell.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+
+                            <!-- DPC NAME -->
+
+                            <div class="form-group">
+
+                                <label for="dpcName">
+                                    District Placement Cell Name
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="dpcName"
+                                    name="dpcName"
+                                    placeholder="Enter official DPC name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- DISTRICT -->
+
+                            <div class="form-group">
+
+                                <label for="district">
+                                    District
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="district"
+                                    name="district"
+                                    placeholder="Enter district name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- STATE -->
+
+                            <div class="form-group">
+
+                                <label for="state">
+                                    State
+                                    <span class="required">*</span>
+                                </label>
+
+                                <select
+                                    id="state"
+                                    name="state"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select State
+                                    </option>
+
+                                    <option value="Andhra Pradesh">
+                                        Andhra Pradesh
+                                    </option>
+
+                                    <option value="Bihar">
+                                        Bihar
+                                    </option>
+
+                                    <option value="Delhi">
+                                        Delhi
+                                    </option>
+
+                                    <option value="Gujarat">
+                                        Gujarat
+                                    </option>
+
+                                    <option value="Haryana">
+                                        Haryana
+                                    </option>
+
+                                    <option value="Jharkhand">
+                                        Jharkhand
+                                    </option>
+
+                                    <option value="Madhya Pradesh">
+                                        Madhya Pradesh
+                                    </option>
+
+                                    <option value="Maharashtra">
+                                        Maharashtra
+                                    </option>
+
+                                    <option value="Punjab">
+                                        Punjab
+                                    </option>
+
+                                    <option value="Rajasthan">
+                                        Rajasthan
+                                    </option>
+
+                                    <option value="Uttar Pradesh">
+                                        Uttar Pradesh
+                                    </option>
+
+                                    <option value="Uttarakhand">
+                                        Uttarakhand
+                                    </option>
+
+                                    <option value="West Bengal">
+                                        West Bengal
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- PINCODE -->
+
+                            <div class="form-group">
+
+                                <label for="pincode">
+                                    PIN Code
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="pincode"
+                                    name="pincode"
+                                    placeholder="Enter 6-digit PIN code"
+                                    maxlength="6"
+                                    inputmode="numeric"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- ADDRESS -->
+
+                            <div class="form-group full-width">
+
+                                <label for="address">
+                                    Official Address
+                                    <span class="required">*</span>
+                                </label>
+
+                                <textarea
+                                    id="address"
+                                    name="address"
+                                    placeholder="Enter complete official address"
+                                    required
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================
+                         OFFICIAL CONTACT
+                    ================================== -->
+
+                    <section class="form-section">
+
+                        <div class="section-heading">
+
+                            <h2>
+                                Official Contact Information
+                            </h2>
+
+                            <p>
+                                Use official contact information for verification.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+
+                            <!-- OFFICIAL EMAIL -->
+
+                            <div class="form-group">
+
+                                <label for="officialEmail">
+                                    Official Email
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="officialEmail"
+                                    name="officialEmail"
+                                    placeholder="official@department.gov.in"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- MOBILE -->
+
+                            <div class="form-group">
+
+                                <label for="officialMobile">
+                                    Official Mobile Number
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="officialMobile"
+                                    name="officialMobile"
+                                    placeholder="Enter 10-digit mobile number"
+                                    maxlength="10"
+                                    inputmode="numeric"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- LANDLINE -->
+
+                            <div class="form-group">
+
+                                <label for="landline">
+                                    Office Contact Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="landline"
+                                    name="landline"
+                                    placeholder="Optional office number"
+                                >
+
+                            </div>
+
+
+                            <!-- WEBSITE -->
+
+                            <div class="form-group">
+
+                                <label for="website">
+                                    Official Website
+                                </label>
+
+                                <input
+                                    type="url"
+                                    id="website"
+                                    name="website"
+                                    placeholder="https://example.gov.in"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================
+                         AUTHORIZED OFFICER
+                    ================================== -->
+
+                    <section class="form-section">
+
+                        <div class="section-heading">
+
+                            <h2>
+                                Authorized Officer Details
+                            </h2>
+
+                            <p>
+                                Details of the officer responsible for this account.
+                            </p>
+
+                        </div>
+
+
+                        <div class="authorized-note">
+
+                            <strong>Important:</strong>
+                            Only an authorized officer should register
+                            the District Placement Cell. The submitted
+                            information will be verified before account activation.
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+
+                            <!-- OFFICER NAME -->
+
+                            <div class="form-group">
+
+                                <label for="officerName">
+                                    Officer Name
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="officerName"
+                                    name="officerName"
+                                    placeholder="Enter authorized officer name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- DESIGNATION -->
+
+                            <div class="form-group">
+
+                                <label for="designation">
+                                    Designation
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="designation"
+                                    name="designation"
+                                    placeholder="Enter designation"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- OFFICER EMAIL -->
+
+                            <div class="form-group">
+
+                                <label for="officerEmail">
+                                    Officer Official Email
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="officerEmail"
+                                    name="officerEmail"
+                                    placeholder="officer@department.gov.in"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- OFFICER MOBILE -->
+
+                            <div class="form-group">
+
+                                <label for="officerMobile">
+                                    Officer Mobile Number
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="officerMobile"
+                                    name="officerMobile"
+                                    placeholder="Enter 10-digit mobile number"
+                                    maxlength="10"
+                                    inputmode="numeric"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================
+                         VERIFICATION DOCUMENTS
+                    ================================== -->
+
+                    <section class="form-section">
+
+                        <div class="section-heading">
+
+                            <h2>
+                                Verification Documents
+                            </h2>
+
+                            <p>
+                                Upload documents that establish the authenticity
+                                of the District Placement Cell.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+
+                            <!-- AUTHORIZATION -->
+
+                            <div class="form-group">
+
+                                <label for="authorizationDocument">
+                                    Authorization Document
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="file"
+                                    id="authorizationDocument"
+                                    name="authorizationDocument"
+                                    class="file-input"
+                                    accept=".pdf,.jpg,.jpeg,.png"
+                                    required
+                                >
+
+                                <span class="file-help">
+                                    PDF, JPG or PNG. Maximum size: 5 MB.
+                                </span>
+
+                            </div>
+
+
+                            <!-- OFFICER ID -->
+
+                            <div class="form-group">
+
+                                <label for="officerIdDocument">
+                                    Authorized Officer ID
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="file"
+                                    id="officerIdDocument"
+                                    name="officerIdDocument"
+                                    class="file-input"
+                                    accept=".pdf,.jpg,.jpeg,.png"
+                                    required
+                                >
+
+                                <span class="file-help">
+                                    PDF, JPG or PNG. Maximum size: 5 MB.
+                                </span>
+
+                            </div>
+
+
+                            <!-- ADDITIONAL DOCUMENT -->
+
+                            <div class="form-group full-width">
+
+                                <label for="additionalDocument">
+                                    Additional Supporting Document
+                                </label>
+
+                                <input
+                                    type="file"
+                                    id="additionalDocument"
+                                    name="additionalDocument"
+                                    class="file-input"
+                                    accept=".pdf,.jpg,.jpeg,.png"
+                                >
+
+                                <span class="file-help">
+                                    Optional. Upload any additional document
+                                    required for verification.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================
+                         ACCOUNT SECURITY
+                    ================================== -->
+
+                    <section class="form-section">
+
+                        <div class="section-heading">
+
+                            <h2>
+                                Account Security
+                            </h2>
+
+                            <p>
+                                Create secure login credentials for the DPC portal.
+                            </p>
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+
+                            <!-- PASSWORD -->
+
+                            <div class="form-group">
+
+                                <label for="password">
+                                    Password
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Create a strong password"
+                                    minlength="8"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <!-- CONFIRM PASSWORD -->
+
+                            <div class="form-group">
+
+                                <label for="confirmPassword">
+                                    Confirm Password
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="confirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="Re-enter your password"
+                                    minlength="8"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================
+                         DECLARATION
+                    ================================== -->
+
+                    <div class="declaration">
+
+                        <input
+                            type="checkbox"
+                            id="declaration"
+                            name="declaration"
+                            required
+                        >
+
+                        <label for="declaration">
+
+                            I hereby declare that the information
+                            provided in this registration form is
+                            accurate and belongs to the official
+                            District Placement Cell. I understand
+                            that NPEPN will verify the submitted
+                            information and documents before activating
+                            the account.
+
+                            <strong>
+                                *
+                            </strong>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- =================================
+                         ACTIONS
+                    ================================== -->
+
+                    <div class="form-actions">
+
+                        <div class="login-link">
+
+                            Already registered?
+
+                            <a href="dpc-login.html">
+                                DPC Login
+                            </a>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                        >
+                            Submit Registration
+                        </button>
+
+                    </div>
+
+
+                </form>
+
+            </div>
+
+
+            <!-- VERIFICATION NOTICE -->
+
+            <div class="verification-notice">
+
+                <div class="notice-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Account Verification
+                    </strong>
+
+                    <p>
+                        Registration does not immediately activate
+                        the DPC account. NPEPN will verify the
+                        submitted details and documents before
+                        granting access to the District Placement
+                        Cell dashboard.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="dpc-registration.js"></script>
+
+</body>
+
+</html>

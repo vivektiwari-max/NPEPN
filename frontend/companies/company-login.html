@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Company Login | NPEPN</title>
+
+    <link rel="stylesheet" href="company-login.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="main-navbar">
+
+        <a href="../index.html" class="navbar-logo">
+            NPEPN
+        </a>
+
+        <nav class="navbar-links">
+
+            <a href="../index.html">Home</a>
+
+            <a href="../index.html#companies">Companies</a>
+
+            <a href="../index.html#students">Students</a>
+
+            <a href="../index.html#placements">Placements</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- LOGIN PAGE -->
+
+    <main class="login-page">
+
+        <section class="login-card">
+
+
+            <!-- HEADER -->
+
+            <div class="login-header">
+
+                <div class="company-icon">
+                    C
+                </div>
+
+                <p class="page-label">
+                    COMPANY PORTAL
+                </p>
+
+                <h1>
+                    Company Login
+                </h1>
+
+                <p>
+                    Login to manage your company profile,
+                    placement drives and student applications.
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN FORM -->
+
+            <form id="companyLoginForm">
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="companyEmail">
+                        Official Company Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="companyEmail"
+                        name="companyEmail"
+                        placeholder="hr@company.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <div class="password-label">
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <a href="#" id="forgotPassword">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="password-toggle"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- REMEMBER -->
+
+                <label class="remember-me">
+
+                    <input
+                        type="checkbox"
+                        id="rememberMe"
+                    >
+
+                    <span>
+                        Remember me
+                    </span>
+
+                </label>
+
+
+                <!-- LOGIN -->
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+                    Login to Company Portal
+                </button>
+
+
+                <!-- REGISTRATION -->
+
+                <div class="register-link">
+
+                    Don't have a company account?
+
+                    <a href="company-registration.html">
+                        Register Company
+                    </a>
+
+                </div>
+
+            </form>
+
+
+            <!-- VERIFICATION NOTICE -->
+
+            <div class="verification-note">
+
+                <strong>Verification Required</strong>
+
+                <span>
+                    Company accounts are activated only after
+                    verification by NPEPN.
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="company-login.js"></script>
+
+</body>
+</html>

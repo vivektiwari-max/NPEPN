@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Company Dashboard | NPEPN</title>
+
+    <link rel="stylesheet" href="company-dashboard.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         MOBILE OVERLAY
+    ========================================== -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+
+            <a href="../index.html">
+                NPEPN
+            </a>
+
+            <span>
+                Company Portal
+            </span>
+
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+            <a href="#" class="menu-item active">
+
+                <span class="menu-icon">⌂</span>
+
+                <span>Dashboard</span>
+
+            </a>
+
+
+            <a href="#" class="menu-item">
+
+                <span class="menu-icon">▣</span>
+
+                <span>Company Profile</span>
+
+            </a>
+
+
+            <a href="#" class="menu-item">
+
+                <span class="menu-icon">◉</span>
+
+                <span>Placement Drives</span>
+
+            </a>
+
+
+            <a href="#" class="menu-item">
+
+                <span class="menu-icon">♙</span>
+
+                <span>Student Applications</span>
+
+            </a>
+
+
+            <a href="#" class="menu-item">
+
+                <span class="menu-icon">▤</span>
+
+                <span>Job / Training Openings</span>
+
+            </a>
+
+
+            <a href="#" class="menu-item">
+
+                <span class="menu-icon">◎</span>
+
+                <span>Notifications</span>
+
+            </a>
+
+
+            <a href="#" class="menu-item">
+
+                <span class="menu-icon">⚙</span>
+
+                <span>Settings</span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html" class="home-link">
+                ← Back to NPEPN
+            </a>
+
+            <button class="logout-btn" id="logoutBtn">
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =====================================
+             TOP HEADER
+        ====================================== -->
+
+        <header class="top-header">
+
+            <div class="header-left">
+
+                <div>
+
+                    <p class="header-label">
+                        COMPANY PORTAL
+                    </p>
+
+                    <h1>
+                        Company Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <div class="header-right">
+
+                <button
+                    type="button"
+                    class="notification-button"
+                    id="notificationButton"
+                    aria-label="Notifications"
+                >
+                    🔔
+                </button>
+
+
+                <div class="company-user">
+
+                    <div class="user-avatar">
+                        C
+                    </div>
+
+                    <div class="user-details">
+
+                        <strong>
+                            Company Name
+                        </strong>
+
+                        <span>
+                            Company Account
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             DASHBOARD CONTENT
+        ====================================== -->
+
+        <section class="dashboard-content">
+
+
+            <!-- WELCOME -->
+
+            <div class="welcome-section">
+
+                <div>
+
+                    <p class="welcome-label">
+                        WELCOME BACK
+                    </p>
+
+                    <h2>
+                        Manage your recruitment activities
+                    </h2>
+
+                    <p>
+                        Connect with students, colleges and
+                        placement cells through NPEPN.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-action"
+                    id="createDriveBtn"
+                >
+                    + Create Placement Drive
+                </button>
+
+            </div>
+
+
+            <!-- =================================
+                 PROFILE STATUS
+            ================================== -->
+
+            <div class="profile-status">
+
+                <div class="status-info">
+
+                    <div class="status-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Company Verification Status
+                        </strong>
+
+                        <p>
+                            Your company profile is ready for
+                            verification by NPEPN.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <span class="status-badge pending">
+                    Pending Verification
+                </span>
+
+            </div>
+
+
+            <!-- =================================
+                 STATISTICS
+            ================================== -->
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Placement Drives
+                        </span>
+
+                        <div class="stat-icon">
+                            ◉
+                        </div>
+
+                    </div>
+
+                    <strong>
+                        0
+                    </strong>
+
+                    <p>
+                        Total drives
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Applications
+                        </span>
+
+                        <div class="stat-icon">
+                            ♙
+                        </div>
+
+                    </div>
+
+                    <strong>
+                        0
+                    </strong>
+
+                    <p>
+                        Student applications
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Shortlisted
+                        </span>
+
+                        <div class="stat-icon">
+                            ✓
+                        </div>
+
+                    </div>
+
+                    <strong>
+                        0
+                    </strong>
+
+                    <p>
+                        Students shortlisted
+                    </p>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <span>
+                            Hired
+                        </span>
+
+                        <div class="stat-icon">
+                            ★
+                        </div>
+
+                    </div>
+
+                    <strong>
+                        0
+                    </strong>
+
+                    <p>
+                        Students hired
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 MAIN GRID
+            ================================== -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- RECENT DRIVES -->
+
+                <div class="dashboard-card large-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Recent Placement Drives
+                            </h3>
+
+                            <p>
+                                Your latest recruitment activities
+                            </p>
+
+                        </div>
+
+                        <a href="#">
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            ◉
+                        </div>
+
+                        <h4>
+                            No placement drives yet
+                        </h4>
+
+                        <p>
+                            Create your first placement drive
+                            to start receiving student applications.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="secondary-action"
+                            id="emptyCreateDriveBtn"
+                        >
+                            Create Placement Drive
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Quick Actions
+                            </h3>
+
+                            <p>
+                                Frequently used actions
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions">
+
+                        <button
+                            type="button"
+                            class="quick-action"
+                            id="profileAction"
+                        >
+
+                            <span class="quick-icon">
+                                ◈
+                            </span>
+
+                            <span>
+                                <strong>
+                                    Complete Profile
+                                </strong>
+
+                                <small>
+                                    Update company information
+                                </small>
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="quick-action"
+                            id="driveAction"
+                        >
+
+                            <span class="quick-icon">
+                                +
+                            </span>
+
+                            <span>
+                                <strong>
+                                    Create Drive
+                                </strong>
+
+                                <small>
+                                    Start a recruitment drive
+                                </small>
+                            </span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="quick-action"
+                            id="applicationsAction"
+                        >
+
+                            <span class="quick-icon">
+                                ♙
+                            </span>
+
+                            <span>
+                                <strong>
+                                    Applications
+                                </strong>
+
+                                <small>
+                                    Review student applications
+                                </small>
+
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =================================
+                 UPCOMING ACTIVITIES
+            ================================== -->
+
+            <div class="dashboard-card upcoming-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <h3>
+                            Upcoming Activities
+                        </h3>
+
+                        <p>
+                            Important recruitment events
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="empty-horizontal">
+
+                    <div class="empty-icon">
+                        ◷
+                    </div>
+
+                    <div>
+
+                        <h4>
+                            No upcoming activities
+                        </h4>
+
+                        <p>
+                            Your scheduled placement drives,
+                            interviews and recruitment events
+                            will appear here.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="company-dashboard.js"></script>
+
+</body>
+
+</html>

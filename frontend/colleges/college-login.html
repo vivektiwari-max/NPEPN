@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Login | NPEPN</title>
+
+    <link rel="stylesheet" href="college-login.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="main-navbar">
+
+        <a href="../index.html" class="navbar-logo">
+            NPEPN
+        </a>
+
+        <nav class="navbar-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#colleges">Colleges</a>
+            <a href="../index.html#jobs">Jobs</a>
+            <a href="../index.html#hackathons">Hackathons</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         LOGIN PAGE
+    ========================== -->
+
+    <main class="login-page">
+
+        <section class="login-card">
+
+            <div class="login-header">
+
+                <div class="college-icon">
+                    C
+                </div>
+
+                <p class="page-label">
+                    COLLEGE PORTAL
+                </p>
+
+                <h1>
+                    College Login
+                </h1>
+
+                <p class="login-description">
+                    Sign in to manage your institution's NPEPN account,
+                    students and placement activities.
+                </p>
+
+            </div>
+
+
+            <!-- LOGIN FORM -->
+
+            <form id="collegeLoginForm">
+
+                <div class="form-group">
+
+                    <label for="officialEmail">
+                        Official Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="officialEmail"
+                        name="officialEmail"
+                        placeholder="Enter your official email"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="password-toggle"
+                            aria-label="Show password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="login-options">
+
+                    <label class="remember-me">
+
+                        <input
+                            type="checkbox"
+                            id="rememberMe"
+                            name="rememberMe"
+                        >
+
+                        <span>Remember me</span>
+
+                    </label>
+
+                    <a href="#" class="forgot-password">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                >
+                    Login
+                </button>
+
+
+                <div class="register-link">
+
+                    Don't have a college account?
+
+                    <a href="college-registration.html">
+                        Register College
+                    </a>
+
+                </div>
+
+            </form>
+
+
+            <!-- VERIFICATION MESSAGE -->
+
+            <div class="verification-message">
+
+                <strong>New College?</strong>
+
+                <span>
+                    Your account must be approved by NPEPN administration
+                    before dashboard access is available.
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="college-login.js"></script>
+
+</body>
+</html>

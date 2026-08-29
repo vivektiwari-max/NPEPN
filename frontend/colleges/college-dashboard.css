@@ -1,0 +1,1150 @@
+/* =========================================
+   NPEPN COLLEGE DASHBOARD
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --sidebar: #101d35;
+    --sidebar-light: #182743;
+    --primary: #315fe8;
+    --primary-dark: #244ed0;
+    --text: #12233f;
+    --muted: #718096;
+    --background: #f5f7fb;
+    --white: #ffffff;
+    --border: #e4e9f0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.dashboard-layout {
+    min-height: 100vh;
+    display: flex;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 270px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--sidebar);
+    color: #ffffff;
+
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+/* =========================================
+   SIDEBAR BRAND
+========================================= */
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    height: 88px;
+
+    padding: 0 22px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.brand-logo {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #3164e9;
+    color: #ffffff;
+
+    border-radius: 10px;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.brand-info h2 {
+    font-size: 18px;
+    font-weight: 700;
+
+    margin-bottom: 2px;
+}
+
+.brand-info span {
+    color: #9eabc0;
+    font-size: 10px;
+}
+
+/* =========================================
+   MENU
+========================================= */
+
+.menu-title {
+    padding: 27px 23px 12px;
+
+    color: #72819b;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+.profile-title {
+    padding-top: 24px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 0 10px;
+}
+
+.menu-item {
+    min-height: 44px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 0 17px;
+
+    color: #d8dfeb;
+
+    border-radius: 9px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+}
+
+.menu-item.active {
+    background: #3562e6;
+    color: #ffffff;
+
+    box-shadow: 0 5px 14px rgba(49, 95, 232, 0.18);
+}
+
+.menu-icon {
+    width: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+}
+
+/* =========================================
+   PROFILE COMPLETION
+========================================= */
+
+.profile-completion {
+    margin: auto 12px 20px;
+
+    padding: 18px 16px;
+
+    background: linear-gradient(
+        135deg,
+        #315fe8,
+        #5b2ee8
+    );
+
+    border-radius: 11px;
+}
+
+.profile-completion h3 {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.profile-completion p {
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 11px;
+    line-height: 1.55;
+
+    margin-bottom: 13px;
+}
+
+.profile-completion button {
+    border: none;
+
+    padding: 8px 12px;
+
+    background: #ffffff;
+    color: #315fe8;
+
+    border-radius: 6px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+.logout-link {
+    display: flex;
+    align-items: center;
+
+    min-height: 55px;
+
+    padding: 0 23px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+    color: #d8dfeb;
+
+    font-size: 12px;
+
+    text-decoration: none;
+}
+
+.logout-link:hover {
+    color: #ffffff;
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    width: calc(100% - 270px);
+    margin-left: 270px;
+    min-height: 100vh;
+}
+
+/* =========================================
+   TOP HEADER
+========================================= */
+
+.top-header {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.welcome-text {
+    color: #536581;
+    font-size: 13px;
+}
+
+.welcome-text strong {
+    color: #315fe8;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Notification */
+
+.notification-button {
+    position: relative;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    background: transparent;
+
+    color: #12233f;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.notification-count {
+    position: absolute;
+
+    top: -1px;
+    right: -1px;
+
+    min-width: 16px;
+    height: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #315fe8;
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+/* User */
+
+.college-user {
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f0eefc;
+    color: #5b3ca4;
+
+    border-radius: 50%;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.user-details strong {
+    font-size: 12px;
+}
+
+.user-details span {
+    color: #8b98aa;
+    font-size: 9px;
+}
+
+.dropdown-arrow {
+    margin-left: 5px;
+    color: #8491a5;
+    font-size: 11px;
+}
+
+/* =========================================
+   DASHBOARD CONTENT
+========================================= */
+
+.dashboard-content {
+    padding: 25px 6%;
+}
+
+/* =========================================
+   COLLEGE PROFILE BANNER
+========================================= */
+
+.college-profile-banner {
+    min-height: 135px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 24px 26px;
+
+    background: #193570;
+
+    border-radius: 15px;
+
+    color: #ffffff;
+}
+
+.college-profile-left {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.college-avatar {
+    position: relative;
+
+    width: 82px;
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #ffffff;
+    color: #49318d;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.online-dot {
+    position: absolute;
+
+    right: 3px;
+    bottom: 5px;
+
+    width: 13px;
+    height: 13px;
+
+    background: #20c979;
+
+    border: 3px solid #193570;
+
+    border-radius: 50%;
+}
+
+.college-profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.college-name-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.college-name-row h1 {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.verified-badge {
+    padding: 5px 8px;
+
+    background: #3869ee;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.college-details,
+.college-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+    color: #dce5f8;
+
+    font-size: 11px;
+}
+
+.college-meta {
+    gap: 18px;
+}
+
+.edit-profile-btn {
+    min-width: 120px;
+
+    padding: 10px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 7px;
+
+    background: transparent;
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.edit-profile-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin: 38px 0;
+}
+
+.stat-card {
+    min-height: 105px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px;
+
+    background: #ffffff;
+
+    border: 1px solid #edf0f5;
+
+    border-radius: 9px;
+
+    box-shadow: 0 5px 20px rgba(18, 35, 63, 0.035);
+}
+
+.stat-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    font-size: 17px;
+}
+
+.stat-icon.blue {
+    background: #edf3ff;
+    color: #3564df;
+}
+
+.stat-icon.green {
+    background: #eafaf2;
+    color: #18b96d;
+}
+
+.stat-icon.orange {
+    background: #fff5e6;
+    color: #e99a18;
+}
+
+.stat-icon.purple {
+    background: #f3edff;
+    color: #8154d8;
+}
+
+.stat-info h2 {
+    font-size: 21px;
+    margin-bottom: 2px;
+}
+
+.stat-info p {
+    color: #ffffff;
+    font-size: 10px;
+
+    color: #b0b9c8;
+
+    margin-bottom: 3px;
+}
+
+.stat-info span {
+    color: #9ba7b8;
+    font-size: 8px;
+}
+
+/* =========================================
+   DASHBOARD CARDS
+========================================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+
+    margin-bottom: 18px;
+}
+
+.bottom-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+.dashboard-card {
+    background: #ffffff;
+
+    border: 1px solid #edf0f5;
+
+    border-radius: 10px;
+
+    padding: 22px;
+
+    box-shadow: 0 5px 20px rgba(18, 35, 63, 0.035);
+}
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #edf0f5;
+
+    margin-bottom: 5px;
+}
+
+.card-header h2 {
+    color: #12233f;
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+.card-header p {
+    color: #9aa5b5;
+
+    font-size: 10px;
+}
+
+.card-header a {
+    color: #315fe8;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.card-header a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   STUDENT LIST
+========================================= */
+
+.student-row {
+    min-height: 62px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    border-bottom: 1px solid #f0f2f6;
+}
+
+.student-row:last-child {
+    border-bottom: none;
+}
+
+.student-avatar {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #eef2ff;
+    color: #315fe8;
+
+    border-radius: 50%;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.student-info {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.student-info strong {
+    color: #12233f;
+    font-size: 11px;
+}
+
+.student-info span {
+    color: #8b97a8;
+    font-size: 9px;
+}
+
+.status {
+    padding: 5px 8px;
+
+    border-radius: 5px;
+
+    font-size: 8px;
+    font-weight: 600;
+}
+
+.status.verified {
+    background: #eafaf2;
+    color: #16a765;
+}
+
+.status.pending {
+    background: #fff5df;
+    color: #d88a0b;
+}
+
+/* =========================================
+   DRIVES
+========================================= */
+
+.drive-row {
+    min-height: 68px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    border-bottom: 1px solid #f0f2f6;
+}
+
+.drive-row:last-child {
+    border-bottom: none;
+}
+
+.company-logo {
+    width: 37px;
+    height: 37px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f4fa;
+    color: #12233f;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.drive-info {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.drive-info strong {
+    font-size: 11px;
+}
+
+.drive-info span {
+    color: #8b97a8;
+    font-size: 9px;
+}
+
+.drive-date {
+    min-width: 35px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.drive-date strong {
+    font-size: 15px;
+}
+
+.drive-date span {
+    color: #8b97a8;
+
+    font-size: 8px;
+
+    margin-top: 1px;
+}
+
+/* =========================================
+   PLACEMENT OVERVIEW
+========================================= */
+
+.placement-stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    padding-top: 15px;
+}
+
+.placement-stats > div {
+    padding: 16px 10px;
+
+    background: #f8f9fc;
+
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+.placement-stats strong {
+    display: block;
+
+    color: #12233f;
+
+    font-size: 21px;
+
+    margin-bottom: 5px;
+}
+
+.placement-stats span {
+    color: #8995a7;
+
+    font-size: 9px;
+}
+
+/* =========================================
+   NOTIFICATIONS
+========================================= */
+
+.notification-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 13px 0;
+
+    border-bottom: 1px solid #f0f2f6;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-dot {
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    margin-top: 5px;
+
+    background: #315fe8;
+
+    border-radius: 50%;
+}
+
+.notification-item strong {
+    display: block;
+
+    color: #12233f;
+
+    font-size: 10px;
+
+    margin-bottom: 3px;
+}
+
+.notification-item p {
+    color: #8b97a8;
+
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.sidebar-overlay {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 900;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .sidebar {
+        width: 230px;
+    }
+
+    .main-content {
+        width: calc(100% - 230px);
+        margin-left: 230px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-content {
+        padding: 25px 4%;
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 260px;
+
+        transform: translateX(-100%);
+
+        transition: transform 0.25s ease;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .sidebar-overlay.active {
+        display: block;
+    }
+
+    .dashboard-grid,
+    .bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .college-profile-banner {
+        align-items: flex-start;
+
+        gap: 20px;
+
+        flex-direction: column;
+    }
+
+    .edit-profile-btn {
+        align-self: flex-end;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 560px) {
+
+    .top-header {
+        height: 65px;
+
+        padding: 0 16px;
+    }
+
+    .welcome-text {
+        font-size: 11px;
+    }
+
+    .user-details,
+    .dropdown-arrow {
+        display: none;
+    }
+
+    .dashboard-content {
+        padding: 18px 12px 35px;
+    }
+
+    .college-profile-banner {
+        padding: 20px;
+
+        border-radius: 12px;
+    }
+
+    .college-profile-left {
+        align-items: flex-start;
+    }
+
+    .college-avatar {
+        width: 65px;
+        height: 65px;
+
+        font-size: 24px;
+    }
+
+    .college-name-row {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .college-name-row h1 {
+        font-size: 17px;
+    }
+
+    .college-details,
+    .college-meta {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 5px;
+
+        font-size: 9px;
+    }
+
+    .edit-profile-btn {
+        align-self: stretch;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+
+        margin: 22px 0;
+    }
+
+    .stat-card {
+        min-height: 95px;
+
+        padding: 12px;
+
+        gap: 9px;
+    }
+
+    .stat-icon {
+        width: 35px;
+        height: 35px;
+
+        font-size: 14px;
+    }
+
+    .stat-info h2 {
+        font-size: 17px;
+    }
+
+    .stat-info p {
+        font-size: 9px;
+    }
+
+    .stat-info span {
+        font-size: 7px;
+    }
+
+    .dashboard-card {
+        padding: 17px;
+    }
+
+    .placement-stats {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .college-profile-left {
+        flex-direction: column;
+    }
+
+    .header-actions {
+        gap: 7px;
+    }
+
+}

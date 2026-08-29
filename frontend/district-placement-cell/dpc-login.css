@@ -1,0 +1,582 @@
+/* =========================================
+   NPEPN - DPC LOGIN
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #315fe8;
+    --primary-dark: #244ed0;
+    --text: #162640;
+    --muted: #718096;
+    --border: #e2e7ef;
+    --background: #f5f7fb;
+    --white: #ffffff;
+    --danger: #d44a4a;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.main-navbar {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: var(--white);
+
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.navbar-logo {
+    color: var(--primary);
+
+    font-size: 22px;
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+.navbar-links a {
+    color: #536581;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+    color: var(--primary);
+}
+
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+.login-page {
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+    justify-content: center;
+
+    padding: 45px 20px 55px;
+}
+
+.login-container {
+    width: min(470px, 100%);
+}
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.page-header {
+    text-align: center;
+
+    margin-bottom: 27px;
+}
+
+.page-label {
+    color: var(--primary);
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+}
+
+.page-header h1 {
+    color: var(--text);
+
+    font-size: 26px;
+
+    line-height: 1.25;
+
+    margin-bottom: 9px;
+}
+
+.page-header p:last-child {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+/* =========================================
+   LOGIN CARD
+========================================= */
+
+.login-card {
+    background: var(--white);
+
+    border: 1px solid #e5e9f0;
+
+    border-radius: 13px;
+
+    box-shadow: 0 12px 35px rgba(18, 35, 63, 0.06);
+
+    overflow: hidden;
+}
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.login-card-header {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 22px 24px;
+
+    border-bottom: 1px solid #edf0f4;
+}
+
+.login-icon {
+    width: 43px;
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #edf2ff;
+
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
+}
+
+.login-card-header h2 {
+    color: var(--text);
+
+    font-size: 13px;
+
+    margin-bottom: 4px;
+}
+
+.login-card-header p {
+    color: #929dac;
+
+    font-size: 8px;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+#dpcLoginForm {
+    padding: 24px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    color: #34445d;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.required {
+    color: var(--danger);
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.password-wrapper input {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border: 1px solid #dce2eb;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #a8b1bf;
+}
+
+.form-group input:focus,
+.password-wrapper input:focus {
+    border-color: var(--primary);
+
+    box-shadow: 0 0 0 3px rgba(49, 95, 232, 0.08);
+}
+
+/* =========================================
+   PASSWORD
+========================================= */
+
+.password-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+}
+
+.password-label label {
+    margin-bottom: 0;
+}
+
+.password-label a {
+    color: var(--primary);
+
+    font-size: 8px;
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.password-label a:hover {
+    text-decoration: underline;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 55px;
+}
+
+.toggle-password {
+    position: absolute;
+
+    top: 50%;
+    right: 10px;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--primary);
+
+    font-family: inherit;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+/* =========================================
+   REMEMBER ME
+========================================= */
+
+.remember-row {
+    margin-top: -3px;
+
+    margin-bottom: 20px;
+}
+
+.remember-option {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 7px;
+
+    color: #77859a;
+
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
+.remember-option input {
+    width: 13px;
+    height: 13px;
+
+    accent-color: var(--primary);
+
+    cursor: pointer;
+}
+
+/* =========================================
+   LOGIN BUTTON
+========================================= */
+
+.login-btn {
+    width: 100%;
+
+    padding: 12px 18px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 6px 16px rgba(49, 95, 232, 0.18);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.login-btn:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-1px);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+/* =========================================
+   REGISTER LINK
+========================================= */
+
+.register-link {
+    padding: 17px 24px;
+
+    border-top: 1px solid #edf0f4;
+
+    background: #fafbfd;
+
+    text-align: center;
+
+    color: #8995a6;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+.register-link a {
+    color: var(--primary);
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   VERIFICATION NOTICE
+========================================= */
+
+.verification-notice {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+    padding: 14px 16px;
+
+    background: #eefaf5;
+
+    border: 1px solid #d6f0e4;
+
+    border-radius: 8px;
+}
+
+.notice-icon {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #d9f4e8;
+
+    color: #15915c;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.verification-notice strong {
+    display: block;
+
+    color: #237653;
+
+    font-size: 9px;
+
+    margin-bottom: 4px;
+}
+
+.verification-notice p {
+    color: #719184;
+
+    font-size: 8px;
+
+    line-height: 1.6;
+}
+
+/* =========================================
+   BACK HOME
+========================================= */
+
+.back-home {
+    display: block;
+
+    margin-top: 18px;
+
+    color: #7e8b9e;
+
+    text-align: center;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.back-home:hover {
+    color: var(--primary);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 600px) {
+
+    .main-navbar {
+        height: 62px;
+
+        padding: 0 20px;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+
+    .login-page {
+        min-height: calc(100vh - 62px);
+
+        padding: 30px 13px 40px;
+    }
+
+    .page-header h1 {
+        font-size: 23px;
+    }
+
+    .login-card-header {
+        padding: 19px;
+    }
+
+    #dpcLoginForm {
+        padding: 20px;
+    }
+
+    .register-link {
+        padding: 16px 18px;
+    }
+
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .login-page {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .page-header h1 {
+        font-size: 21px;
+    }
+
+    .login-card-header {
+        padding: 17px;
+    }
+
+    #dpcLoginForm {
+        padding: 17px;
+    }
+
+}
