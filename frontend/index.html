@@ -3,253 +3,613 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NPEPN</title>
+    <title>NPEPN - National Professional Education & Employment Network</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src ="script.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="menu.js" defer></script>
 </head>
 
 <body>
 
-    <header>
+    <!-- ================= TOP BAR ================= -->
+    <div class="top-bar">
 
-        <h1>NPEPN</h1>
+        <div class="top-left">
+            <span>☎ Helpline: 9696328794</span>
+            <span>✉ support@npepn.in</span>
+        </div>
 
-        <nav>
+        <div class="top-right">
+            <a href="#">⇩ Downloads</a>
+            <a href="#">▣ News & Updates</a>
+            <a href="#">? Help & Support</a>
+        </div>
+
+    </div>
+
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <!-- MENU BUTTON -->
+<button id="menuBtn" class="menu-btn">☰</button>
+
+<!-- SIDE MENU -->
+<div id="sideMenu" class="side-menu">
+
+    <div class="menu-header">
+        <h4>Menu</h4>
+        <button id="closeMenu" class="close-btn">&times;</button>
+    </div>
+
+    <ul class="menu-list">
+
+        <li>
             <a href="#">Home</a>
-            <a href="#">Colleges</a>
-            <a href="#">Jobs</a>
-            <a href="#">Hackathons</a>
+        </li>
+
+        <!-- STUDENT -->
+        <li class="dropdown">
+            <div class="dropdown-title">
+                Student <span>▼</span>
+            </div>
+
+            <ul class="submenu">
+                <li><a href="student-login.html">Student Login</a></li>
+                <li><a href="student-register.html">Student Registration</a></li>
+            </ul>
+        </li>
+
+        <!-- COLLEGE -->
+        <li class="dropdown">
+            <div class="dropdown-title">
+                College <span>▼</span>
+            </div>
+
+            <ul class="submenu">
+                <li><a href="#">College Login</a></li>
+                <li><a href="#">College Registration</a></li>
+                <li><a href="#">College Directory</a></li>
+            </ul>
+        </li>
+
+        <!-- COMPANY -->
+        <li class="dropdown">
+            <div class="dropdown-title">
+                Company <span>▼</span>
+            </div>
+
+            <ul class="submenu">
+                <li><a href="#">Company Login</a></li>
+                <li><a href="#">Company Registration</a></li>
+            </ul>
+        </li>
+
+        <!-- DISTRICT PLACEMENT CELL -->
+        <li class="dropdown">
+            <div class="dropdown-title">
+                District Placement Cell <span>▼</span>
+            </div>
+
+            <ul class="submenu">
+                <li><a href="#">Placement Cell Login</a></li>
+            </ul>
+        </li>
+
+        <!-- ADMIN -->
+        <li class="dropdown">
+            <div class="dropdown-title">
+                Admin <span>▼</span>
+            </div>
+
+            <ul class="submenu">
+                <li><a href="#">Admin Login</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#">Trainings</a>
+        </li>
+
+        <li>
+            <a href="#">Placement Statistics / Records</a>
+        </li>
+
+        <li>
+            <a href="#">Gallery</a>
+        </li>
+
+    </ul>
+</div>
+
+<!-- DARK OVERLAY -->
+<div id="overlay" class="overlay"></div>
+     
+       <div class="logo">
+    <img src="C:\Users\Vivek Tiwari\OneDrive\Desktop\NPEPN\frontend\images\npepn.png" alt="NPEPN Logo">
+</div>
+
+        <nav class="navigation">
+
+            <a href="#" class="active">Home</a>
+
+            <div class="nav-dropdown">
+                <a href="#">Opportunities ▾</a>
+
+                <div class="dropdown-menu">
+                    <a href="#">Jobs</a>
+                    <a href="#">Internships</a>
+                    <a href="#">Hackathons</a>
+                    <a href="#">Trainings</a>
+                </div>
+            </div>
+
+
+            <div class="nav-dropdown">
+                <a href="#">Network ▾</a>
+
+                <div class="dropdown-menu">
+                    <a href="#">Colleges</a>
+                    <a href="#">District Placement Cells</a>
+                    <a href="#">Companies / Industry</a>
+                </div>
+            </div>
+
+
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+
+
+           <div class="auth-buttons">
+
+    <!-- LOGIN DROPDOWN -->
+    <div class="auth-dropdown">
+
+        <button class="login-button">
+            ♟ Login <span class="dropdown-arrow">▾</span>
+        </button>
+
+        <div class="auth-dropdown-menu">
+
+            <a href="student-login.html">
+                Student Login
+            </a>
+
+            <a href="college-login.html">
+                College Login
+            </a>
+
+            <a href="placement-cell-login.html">
+                District Placement Cell Login
+            </a>
+
+            <a href="company-login.html">
+                Company Login
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- REGISTER DROPDOWN -->
+    <div class="auth-dropdown">
+
+        <button class="register-button">
+            ♟ Register <span class="dropdown-arrow">▾</span>
+        </button>
+
+        <div class="auth-dropdown-menu">
+
+            <a href="student-register.html">
+                Student Registration
+            </a>
+
+            <a href="college-register.html">
+                College Registration
+            </a>
+
+            <a href="placement-cell-register.html">
+                District Placement Cell Registration
+            </a>
+
+            <a href="company-register.html">
+                Company Registration
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
         </nav>
 
     </header>
 
 
+    <!-- ================= HERO ================= -->
     <main>
 
-        <section>
+        <section class="hero">
 
-            <p>PROFESSIONAL EDUCATION → EMPLOYMENT</p>
+            <div class="hero-content">
 
-            <h1>
-                Connecting Students,
-                Colleges & Industry
-            </h1>
+                <p class="tagline">
+                    PROFESSIONAL EDUCATION
+                    <span>→</span>
+                    EMPLOYMENT
+                </p>
 
-            <p>
-                Building a stronger path from education to employment.
-            </p>
 
-           <a href="student-register.html" class="primary-button">
-    I'm a Student
-</a>
-            <button>I'm a College</button>
-            <button>I'm a Company</button>
+                <h1>
+                    Connecting
+                    <span>Students,</span><br>
+                    Colleges & Industry
+                </h1>
+
+
+                <p class="description">
+                    Building a stronger path from education to employment.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="student-register.html"
+                       class="hero-btn primary">
+                        🎓 &nbsp; I'm a Student
+                    </a>
+
+                    <a href="#" class="hero-btn">
+                        🏫 &nbsp; I'm a College
+                    </a>
+
+                    <a href="#" class="hero-btn">
+                        💼 &nbsp; I'm a Company
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO IMAGE -->
+            <div class="hero-visual">
+
+                <img src="images/hero-images.png"
+                     alt="Students Colleges and Industry">
+
+            </div>
 
         </section>
 
+
+
+        <!-- ================= STATS ================= -->
         <section class="stats">
 
-    <div class="stat-card">
-        <h2>0</h2>
-        <p>Registered Colleges</p>
-    </div>
+            <div class="stat-card">
 
-    <div class="stat-card">
-        <h2>0</h2>
-        <p>Registered Students</p>
-    </div>
+                <div class="stat-icon blue">
+                    🏫
+                </div>
 
-    <div class="stat-card">
-        <h2>0</h2>
-        <p>Registered Companies</p>
-    </div>
+                <div>
+                    <h2>12k</h2>
+                    <p>Registered Colleges</p>
+                </div>
 
-    <div class="stat-card">
-        <h2>0</h2>
-        <p>Successful Placements</p>
-    </div>
+            </div>
 
-</section>
 
-<section class="how-it-works">
+            <div class="stat-card">
 
-    <div class="section-heading">
-        <p>HOW IT WORKS</p>
+                <div class="stat-icon green">
+                    👥
+                </div>
 
-        <h2>
-            From Professional Education
-            to Employment
-        </h2>
+                <div>
+                    <h2>0</h2>
+                    <p>Registered Students</p>
+                </div>
 
-        <span>
-            A structured placement network connecting
-            students, colleges, district cells and industry.
-        </span>
-    </div>
+            </div>
 
 
-    <div class="steps">
+            <div class="stat-card">
 
-        <div class="step-card">
+                <div class="stat-icon orange">
+                    💼
+                </div>
 
-            <div class="step-number">01</div>
+                <div>
+                    <h2>0</h2>
+                    <p>Registered Companies</p>
+                </div>
 
-            <h3>Student Registration</h3>
+            </div>
 
-            <p>
-                Students register with their professional
-                degree, skills, college and district details.
-            </p>
 
-        </div>
+            <div class="stat-card">
 
+                <div class="stat-icon purple">
+                    📈
+                </div>
 
-        <div class="step-card">
+                <div>
+                    <h2>0</h2>
+                    <p>Successful Placements</p>
+                </div>
 
-            <div class="step-number">02</div>
+            </div>
 
-            <h3>District Placement Cell</h3>
+        </section>
 
-            <p>
-                Eligible students participate in their
-                district-level placement process.
-            </p>
 
-        </div>
 
+        <!-- ================= HOW IT WORKS ================= -->
+        <section class="how-it-works">
 
-        <div class="step-card">
+            <div class="section-heading">
 
-            <div class="step-number">03</div>
+                <p>HOW IT WORKS</p>
 
-            <h3>Industry Opportunities</h3>
+                <h2>
+                    From Professional Education to Employment
+                </h2>
 
-            <p>
-                Companies access entry-level talent
-                according to their requirements.
-            </p>
+                <span>
+                    A structured placement network connecting
+                    students, colleges, district cells and industry.
+                </span>
 
-        </div>
+            </div>
 
 
-        <div class="step-card">
+            <div class="steps">
 
-            <div class="step-number">04</div>
+                <!-- CARD 1 -->
+                <div class="step-card">
 
-            <h3>Placement & Tracking</h3>
+                    <div class="step-icon">
+                        👤
+                    </div>
 
-            <p>
-                Placement results are recorded and
-                unplaced students continue with
-                employment support.
-            </p>
+                    <div class="step-content">
 
-        </div>
+                        <small>01</small>
 
-    </div>
+                        <h3>
+                            Student Registration
+                        </h3>
 
-</section>
+                        <p>
+                            Students register with their professional
+                            degree, skills, college and district details.
+                        </p>
 
-<!-- District Placement Network -->
+                    </div>
 
-<section class="district-network">
+                </div>
 
-    <div class="section-heading">
 
-        <p>DISTRICT PLACEMENT NETWORK</p>
+                <!-- CARD 2 -->
+                <div class="step-card">
 
-        <h2>
-            One Network for Every District
-        </h2>
+                    <div class="step-icon">
+                        🏛
+                    </div>
 
-        <span>
-            Colleges and professional-degree students are
-            connected through district-level placement cells.
-        </span>
+                    <div class="step-content">
 
-    </div>
+                        <small>02</small>
 
+                        <h3>
+                            District Placement Cell
+                        </h3>
 
-    <div class="network-flow">
+                        <p>
+                            Eligible students participate in their
+                            district-level placement process.
+                        </p>
 
-        <div class="network-card">
+                    </div>
 
-            <div class="network-icon">01</div>
+                </div>
 
-            <h3>District</h3>
 
-            <p>
-                District-level placement network
-                manages participating colleges.
-            </p>
+                <!-- CARD 3 -->
+                <div class="step-card">
 
-        </div>
+                    <div class="step-icon">
+                        💼
+                    </div>
 
+                    <div class="step-content">
 
-        <div class="flow-arrow">→</div>
+                        <small>03</small>
 
+                        <h3>
+                            Industry Opportunities
+                        </h3>
 
-        <div class="network-card">
+                        <p>
+                            Companies access entry-level talent
+                            according to their requirements.
+                        </p>
 
-            <div class="network-icon">02</div>
+                    </div>
 
-            <h3>Colleges</h3>
+                </div>
 
-            <p>
-                Registered professional-degree
-                colleges provide verified student data.
-            </p>
 
-        </div>
+                <!-- CARD 4 -->
+                <div class="step-card">
 
+                    <div class="step-icon purple-icon">
+                        📊
+                    </div>
 
-        <div class="flow-arrow">→</div>
+                    <div class="step-content">
 
+                        <small>04</small>
 
-        <div class="network-card">
+                        <h3>
+                            Placement & Tracking
+                        </h3>
 
-            <div class="network-icon">03</div>
+                        <p>
+                            Placement results are recorded and
+                            unplaced students continue with
+                            employment support.
+                        </p>
 
-            <h3>Students</h3>
+                    </div>
 
-            <p>
-                Eligible students participate according
-                to their professional degree and skills.
-            </p>
+                </div>
 
-        </div>
+            </div>
 
+        </section>
 
-        <div class="flow-arrow">→</div>
 
 
-        <div class="network-card">
+        <!-- ================= DISTRICT NETWORK ================= -->
+        <section class="district-network">
 
-            <div class="network-icon">04</div>
+            <div class="section-heading">
 
-            <h3>Companies</h3>
+                <p>DISTRICT PLACEMENT NETWORK</p>
 
-            <p>
-                Companies access entry-level talent
-                according to their requirements.
-            </p>
+                <h2>
+                    One Network for Every District
+                </h2>
 
-        </div>
+                <span>
+                    Colleges and professional-degree students are
+                    connected through district-level placement cells.
+                </span>
 
-    </div>
+            </div>
 
-</section>
+
+            <div class="network-flow">
+
+                <!-- District -->
+                <div class="network-card">
+
+                    <div class="network-icon blue-icon">
+                        📍
+                    </div>
+
+                    <div>
+                        <small>01</small>
+
+                        <h3>District</h3>
+
+                        <p>
+                            District-level placement network
+                            manages participating colleges.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <!-- Colleges -->
+                <div class="network-card">
+
+                    <div class="network-icon green-icon">
+                        🏫
+                    </div>
+
+                    <div>
+                        <small>02</small>
+
+                        <h3>Colleges</h3>
+
+                        <p>
+                            Registered professional-degree
+                            colleges provide verified student data.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <!-- Students -->
+                <div class="network-card">
+
+                    <div class="network-icon orange-icon">
+                        👤
+                    </div>
+
+                    <div>
+                        <small>03</small>
+
+                        <h3>Students</h3>
+
+                        <p>
+                            Eligible students participate according
+                            to their professional degree and skills.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <!-- Companies -->
+                <div class="network-card">
+
+                    <div class="network-icon purple-icon">
+                        💼
+                    </div>
+
+                    <div>
+                        <small>04</small>
+
+                        <h3>Companies</h3>
+
+                        <p>
+                            Companies access entry-level talent
+                            according to their requirements.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
 
+
+    <!-- ================= FOOTER ================= -->
     <footer>
 
-        <p>© 2026 NPEPN. All rights reserved.</p>
+        <p>
+            © 2026 NPEPN. All rights reserved.
+        </p>
 
     </footer>
 

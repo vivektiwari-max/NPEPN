@@ -1,234 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Student Registration - NPEPN</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-</head>
-
-
-<body>
-
-
+  <body>
     <!-- Header -->
 
     <header>
+      <h1>NPEPN</h1>
 
-        <h1>NPEPN</h1>
+      <nav>
+        <a href="index.html">Home</a>
 
-        <nav>
+        <a href="#">Colleges</a>
 
-            <a href="index.html">Home</a>
+        <a href="#">Jobs</a>
 
-            <a href="#">Colleges</a>
-
-            <a href="#">Jobs</a>
-
-            <a href="#">Hackathons</a>
-
-        </nav>
-
+        <a href="#">Hackathons</a>
+      </nav>
     </header>
-
 
     <!-- Registration -->
 
     <main>
+      <section class="registration">
+        <div class="registration-heading">
+          <p>STUDENT REGISTRATION</p>
 
-        <section class="registration">
+          <h2>Join the NPEPN Placement Network</h2>
 
-            <div class="registration-heading">
+          <span>
+            Register your professional education, skills and placement
+            information.
+          </span>
+        </div>
 
-                <p>STUDENT REGISTRATION</p>
+        <form id="studentForm">
+          <!-- Personal Information -->
 
-                <h2>
-                    Join the NPEPN Placement Network
-                </h2>
+          <div class="form-section">
+            <h3>Personal Information</h3>
 
-                <span>
-                    Register your professional education,
-                    skills and placement information.
-                </span>
+            <label for="name"> Full Name </label>
 
-            </div>
+            <input type="text" id="name" placeholder="Enter your full name" />
 
+            <label for="email"> Email Address </label>
 
-            <form id = "studentForm">
+            <input type="email" id="email" placeholder="Enter your email" />
 
+            <label for="phone"> Mobile Number </label>
 
-                <!-- Personal Information -->
+            <input type="tel" id="phone" placeholder="Enter mobile number" />
+            <label for="password"> Password </label>
 
-                <div class="form-section">
+            <input type="password" id="password" placeholder="Create a password" />
 
-                    <h3>Personal Information</h3>
+            <label for="confirmPassword"> Confirm Password </label>
+            <input type="password" id="confirmPassword" placeholder="Re-enter Password" />
+          </div>
 
+          <!-- Education -->
 
-                    <label for="name">
-                        Full Name
-                    </label>
+          <div class="form-section">
+            <h3>Education Information</h3>
 
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Enter your full name"
-                    >
+            <label for="degree"> Professional Degree </label>
 
+            <select id="degree">
+              <option value="">Select Degree</option>
 
-                    <label for="email">
-                        Email Address
-                    </label>
+              <option>B.Tech</option>
 
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Enter your email"
-                    >
+              <option>BCA</option>
 
+              <option>MCA</option>
 
-                    <label for="phone">
-                        Mobile Number
-                    </label>
+              <option>B.Pharm</option>
 
-                    <input
-                        type="tel"
-                        id="phone"
-                        placeholder="Enter mobile number"
-                    >
+              <option>BBA</option>
+            </select>
 
-                </div>
+            <label for="college">
+    College Name
+</label>
 
+<div class="college-search">
+    <input
+        type="text"
+        id="college"
+        placeholder="Search your college..."
+        autocomplete="off"
+    >
 
-                <!-- Education -->
+    <div id="collegeResults" class="college-results"></div>
+</div>
 
-                <div class="form-section">
+<input type="hidden" id="collegeId">
+            <label for="district"> District </label>
 
-                    <h3>Education Information</h3>
+            <select id="district">
+              <option value="">Select District</option>
 
+              <option>Jaunpur</option>
 
-                    <label for="degree">
-                        Professional Degree
-                    </label>
+              <option>Lucknow</option>
 
-                    <select id="degree">
+              <option>Prayagraj</option>
 
-                        <option value="">
-                            Select Degree
-                        </option>
+              <option>Varanasi</option>
+            </select>
+          </div>
 
-                        <option>
-                            B.Tech
-                        </option>
+          <!-- Skills -->
 
-                        <option>
-                            BCA
-                        </option>
+          <div class="form-section">
+            <h3>Skills</h3>
 
-                        <option>
-                            MCA
-                        </option>
+            <label for="skills"> Technical Skills </label>
 
-                        <option>
-                            B.Pharm
-                        </option>
+            <textarea
+              id="skills"
+              placeholder="Example: Python, Java, SQL, HTML, CSS"
+            ></textarea>
+          </div>
 
-                        <option>
-                            BBA
-                        </option>
+          <!-- Submit -->
 
-                    </select>
-
-
-                    <label for="college">
-                        College Name
-                    </label>
-
-                    <input
-                        type="text"
-                        id="college"
-                        placeholder="Enter college name"
-                    >
-
-
-                    <label for="district">
-                        District
-                    </label>
-
-                    <select id="district">
-
-                        <option value="">
-                            Select District
-                        </option>
-
-                        <option>
-                            Jaunpur
-                        </option>
-
-                        <option>
-                            Lucknow
-                        </option>
-
-                        <option>
-                            Prayagraj
-                        </option>
-
-                        <option>
-                            Varanasi
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <!-- Skills -->
-
-                <div class="form-section">
-
-                    <h3>Skills</h3>
-
-
-                    <label for="skills">
-                        Technical Skills
-                    </label>
-
-                    <textarea
-                        id="skills"
-                        placeholder="Example: Python, Java, SQL, HTML, CSS"
-                    ></textarea>
-
-                </div>
-
-
-                <!-- Submit -->
-
-                <button type="submit">
-                    Register as Student
-                </button>
-
-
-            </form>
-
-        </section>
-
+          <button type="submit">Register as Student</button>
+        </form>
+        <p>Already have an account? <a href="student-login.html">Login here</a></p>
+      </section>
     </main>
 
-
     <footer>
-
-        <p>
-            © 2026 NPEPN. All rights reserved.
-        </p>
-
+      <p>© 2026 NPEPN. All rights reserved.</p>
     </footer>
 
-<script src="script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

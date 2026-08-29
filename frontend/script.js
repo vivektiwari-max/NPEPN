@@ -9,6 +9,8 @@ studentForm.addEventListener("submit", async function (event) {
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const phone = document.getElementById("phone").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const confirmPassword = document.getElementById("confirmPassword").value.trim();
     const degree = document.getElementById("degree").value;
     const college = document.getElementById("college").value.trim();
     const district = document.getElementById("district").value;
@@ -27,6 +29,22 @@ studentForm.addEventListener("submit", async function (event) {
 
     if (!phonePattern.test(phone)) {
         alert("Please enter a valid phone number.");
+        return;
+    }
+    if(password === "") {
+        alert("Please enter a password.");
+        return;
+    }
+    if(password.length < 8) {
+        alert("Password must be at least 8 characters long.");
+        return;
+    }
+    if(confirmPassword === "") {
+        alert("Please confirm your password.");
+        return;
+    }
+    if(password !== confirmPassword) {
+        alert("Passwords do not match.");
         return;
     }
 
@@ -55,6 +73,7 @@ studentForm.addEventListener("submit", async function (event) {
         name,
         email,
         phone,
+        password,
         degree,
         college,
         district,
@@ -87,3 +106,119 @@ studentForm.addEventListener("submit", async function (event) {
         alert("Backend server se connection nahi ho pa raha!");
     }
 });
+
+// ===============================
+// COLLEGE SEARCH
+// ===============================
+
+const collegeInput = document.getElementById("college");
+const collegeResults = document.getElementById("collegeResults");
+const collegeIdInput = document.getElementById("collegeId");
+
+let collegeSearchTimer;
+
+if (collegeInput && collegeResults) {
+
+    collegeInput.addEventListener("input", function () {
+
+        const searchText = collegeInput.value.trim();
+
+        clearTimeout(collegeSearchTimer);
+
+        collegeIdInput.value = "";
+
+        if (searchText.length < 2) {
+            collegeResults.innerHTML = "";
+            collegeResults.style.display = "none";
+            return;
+        }
+
+        collegeSearchTimer = setTimeout(async () => {
+
+            try {
+
+                const response = await fetch(
+                    `http://localhost:3000/api/colleges?search=${encodeURIComponent(searchText)}`
+                );
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(
+                        data.message || "Failed to load colleges."
+                    );
+                }
+
+                collegeResults.innerHTML = "";
+
+                if (!data.colleges || data.colleges.length === 0) {
+
+                    collegeResults.innerHTML = `
+                        <div class="no-college">
+                            No college found
+                        </div>
+                    `;
+
+                } else {
+
+                    data.colleges.forEach(college => {
+
+                        const item = document.createElement("div");
+
+                        item.className = "college-result-item";
+
+                        item.innerHTML = `
+                            <strong>${college.college_name}</strong>
+                            <small>
+                                ${college.city || ""}
+                                ${college.district ? ", " + college.district : ""}
+                                ${college.state ? ", " + college.state : ""}
+                            </small>
+                        `;
+
+                        item.addEventListener("click", function () {
+
+                            collegeInput.value = college.college_name;
+                            collegeIdInput.value = college.id;
+
+                            collegeResults.innerHTML = "";
+                            collegeResults.style.display = "none";
+
+                        });
+
+                        collegeResults.appendChild(item);
+
+                    });
+                }
+
+                collegeResults.style.display = "block";
+
+            } catch (error) {
+
+                console.error("College search error:", error);
+
+                collegeResults.innerHTML = `
+                    <div class="no-college">
+                        Unable to load colleges
+                    </div>
+                `;
+
+                collegeResults.style.display = "block";
+            }
+
+        }, 300);
+
+    });
+
+    document.addEventListener("click", function (event) {
+
+        if (
+            !collegeInput.contains(event.target) &&
+            !collegeResults.contains(event.target)
+        ) {
+            collegeResults.style.display = "none";
+        }
+
+    });
+
+}
