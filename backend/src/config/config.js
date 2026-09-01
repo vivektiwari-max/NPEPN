@@ -1,8 +1,12 @@
 const path = require("path");
 
 require("dotenv").config({
-  path: path.resolve(__dirname, "..", "..", ".env"),
+  path: path.resolve(__dirname, "../../.env"),
 });
+
+if (!process.env.JWT_SECRET) {
+  throw new Error("JWT_SECRET must be set in backend/.env");
+}
 
 module.exports = {
   // Server Configuration
@@ -20,7 +24,7 @@ module.exports = {
 
   // JWT Configuration
   jwt: {
-    secret: process.env.JWT_SECRET || "your_secret_key_min_32_characters_long",
+    secret: process.env.JWT_SECRET,
     expire: process.env.JWT_EXPIRE || "1h",
     refreshExpire: process.env.JWT_REFRESH_EXPIRE || "7d",
   },

@@ -110,10 +110,10 @@ const studentsController = {
         // Create student profile
         const studentResult = await client.query(
           `INSERT INTO students
-           (name, email, phone, degree, college, district, skills)
-           VALUES ($1, $2, $3, $4, $5, $6, $7)
+           (user_id, name, email, phone, degree, college, district, skills)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
            RETURNING *`,
-          [name, email, phone, degree, college, district, skills],
+          [userId, name, email, phone, degree, college, district, skills],
         );
 
         await client.query("COMMIT");
@@ -177,16 +177,8 @@ const studentsController = {
   // Get student profile
   getProfile: async (req, res, next) => {
     try {
-      const email = req.query.email || req.user?.email;
+      const email = req.user.email;
 
-      if (!email) {
-        return res.status(STATUS_CODES.BAD_REQUEST).json({
-          success: false,
-          error: {
-            message: "Email is required.",
-          },
-        });
-      }
 
       const student = await Student.findByEmail(email);
 
@@ -219,10 +211,58 @@ const studentsController = {
   updateProfile: async (req, res, next) => {
     try {
       const { id } = req.params;
-      const updateData = validators.trimData(req.body);
 
-      const student = await Student.update(id, updateData);
+const existingStudent = await Student.findById(id);
 
+if (!existingStudent) {
+  return res.status(STATUS_CODES.NOT_FOUND).json({
+    success: false,
+    error: {
+      message: "Student not found.",
+    },
+  });
+}
+
+const isOwner = existingStudent.user_id === req.user.id;
+const isAdmin = req.user.role === "admin";
+
+if (!isOwner && !isAdmin) {
+  return res.status(STATUS_CODES.FORBIDDEN).json({
+    success: false,
+    error: {
+      message: "You do not have permission to update this profile.",
+    },
+  });
+}
+
+const allowedFields = [
+  "name",
+  "phone",
+  "degree",
+  "college",
+  "district",
+  "skills",
+];
+
+const trimmedData = validators.trimData(req.body);
+const updateData = {};
+
+for (const field of allowedFields) {
+  if (Object.prototype.hasOwnProperty.call(trimmedData, field)) {
+    updateData[field] = trimmedData[field];
+  }
+}
+
+if (Object.keys(updateData).length === 0) {
+  return res.status(STATUS_CODES.BAD_REQUEST).json({
+    success: false,
+    error: {
+      message: "No valid fields provided for update.",
+    },
+  });
+}
+
+const student = await Student.update(id, updateData);
       if (!student) {
         return res.status(STATUS_CODES.NOT_FOUND).json({
           success: false,
@@ -254,6 +294,29 @@ const studentsController = {
   delete: async (req, res, next) => {
     try {
       const { id } = req.params;
+
+      const student = await Student.findById(id);
+
+if (!student) {
+  return res.status(STATUS_CODES.NOT_FOUND).json({
+    success: false,
+    error: {
+      message: "Student not found.",
+    },
+  });
+}
+
+const isOwner = student.user_id === req.user.id;
+const isAdmin = req.user.role === "admin";
+
+if (!isOwner && !isAdmin) {
+  return res.status(STATUS_CODES.FORBIDDEN).json({
+    success: false,
+    error: {
+      message: "You do not have permission to delete this profile.",
+    },
+  });
+}
 
       await Student.delete(id);
 

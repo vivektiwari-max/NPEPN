@@ -29,7 +29,7 @@ loginForm.addEventListener("submit", async function (event) {
   try {
     // Send login request to backend
 
-    const response = await fetch("http://localhost:3000/api/auth/login", {
+    const response = await fetch("http://127.0.0.1:3000/api/auth/login", {
       method: "POST",
 
       headers: {
@@ -48,7 +48,7 @@ loginForm.addEventListener("submit", async function (event) {
     // Login failed
 
     if (!response.ok) {
-      alert(data.message || "Login failed.");
+      alert(data.error?.message || "Login failed.");
       return;
     }
 

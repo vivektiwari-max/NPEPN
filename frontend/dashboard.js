@@ -13,11 +13,15 @@ async function loadStudentProfile() {
 
     try {
 
-        const loggedInUser = JSON.parse(user);
-
+       
         const response = await fetch(
-            `http://localhost:3000/api/students/profile?email=${encodeURIComponent(loggedInUser.email)}`
-        );
+  "http://127.0.0.1:3000/api/students/profile",
+  {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  },
+);
 
         const data = await response.json();
 

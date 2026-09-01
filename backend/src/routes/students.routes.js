@@ -10,9 +10,20 @@ router.get("/search/college", studentsController.searchByCollege);
 router.get("/search/district", studentsController.getByDistrict);
 
 // Protected routes
-router.get("/", verifyToken, studentsController.getAll);
-router.get("/profile", verifyToken, studentsController.getProfile);
-router.put("/:id", verifyToken, studentsController.updateProfile);
+router.get("/", studentsController.getAll); // Public for testing
+router.get(
+  "/profile",
+  verifyToken,
+  checkRole("student", "admin"),
+  studentsController.getProfile,
+);
+
+router.put(
+  "/:id",
+  verifyToken,
+  checkRole("student", "admin"),
+  studentsController.updateProfile,
+);
 router.delete(
   "/:id",
   verifyToken,

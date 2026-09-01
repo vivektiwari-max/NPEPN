@@ -82,7 +82,7 @@ studentForm.addEventListener("submit", async function (event) {
 
     try {
         // Send data to backend
-        const response = await fetch("http://localhost:3000/api/students", {
+        const response = await fetch("http://127.0.0.1:3000/api/students", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -98,7 +98,7 @@ studentForm.addEventListener("submit", async function (event) {
             alert("Student registered successfully!");
             studentForm.reset();
         } else {
-            alert(data.message || "Registration failed!");
+            alert(data.error?.message || "Registration failed!");
         }
 
     } catch (error) {
@@ -138,7 +138,7 @@ if (collegeInput && collegeResults) {
             try {
 
                 const response = await fetch(
-                    `http://localhost:3000/api/colleges?search=${encodeURIComponent(searchText)}`
+                    `http://127.0.0.1:3000/api/colleges?search=${encodeURIComponent(searchText)}`
                 );
 
                 const data = await response.json();
