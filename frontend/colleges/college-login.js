@@ -1,115 +1,138 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("collegeLoginForm");
+  const passwordInput = document.getElementById("password");
+  const togglePassword = document.getElementById("togglePassword");
+  const forgotPassword = document.querySelector(".forgot-password");
 
-    const loginForm = document.getElementById("collegeLoginForm");
-    const passwordInput = document.getElementById("password");
-    const togglePassword = document.getElementById("togglePassword");
-    const forgotPassword = document.querySelector(".forgot-password");
-
-    /* =========================================
+  /* =========================================
        SHOW / HIDE PASSWORD
     ========================================= */
 
-    if (togglePassword && passwordInput) {
+  if (togglePassword && passwordInput) {
+    togglePassword.addEventListener("click", () => {
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        togglePassword.textContent = "Hide";
+        togglePassword.setAttribute("aria-label", "Hide password");
+      } else {
+        passwordInput.type = "password";
+        togglePassword.textContent = "Show";
+        togglePassword.setAttribute("aria-label", "Show password");
+      }
+    });
+  }
 
-        togglePassword.addEventListener("click", () => {
-
-            if (passwordInput.type === "password") {
-
-                passwordInput.type = "text";
-                togglePassword.textContent = "Hide";
-                togglePassword.setAttribute(
-                    "aria-label",
-                    "Hide password"
-                );
-
-            } else {
-
-                passwordInput.type = "password";
-                togglePassword.textContent = "Show";
-                togglePassword.setAttribute(
-                    "aria-label",
-                    "Show password"
-                );
-            }
-
-        });
-
-    }
-
-
-    /* =========================================
+  /* =========================================
        LOGIN FORM
     ========================================= */
 
-    if (loginForm) {
+  if (loginForm) {
+    loginForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
 
-        loginForm.addEventListener("submit", (event) => {
+      const emailInput = document.getElementById("officialEmail");
 
-            event.preventDefault();
+      const email = emailInput.value.trim();
+      const password = passwordInput.value;
 
-            const emailInput =
-                document.getElementById("officialEmail");
+      /* Empty email */
 
-            const email = emailInput.value.trim();
-            const password = passwordInput.value;
+      if (!email) {
+        alert("Please enter your official email.");
+        emailInput.focus();
+        return;
+      }
 
-            /* Empty email */
+      /* Email format */
 
-            if (!email) {
-                alert("Please enter your official email.");
-                emailInput.focus();
-                return;
-            }
+      if (!emailInput.checkValidity()) {
+        alert("Please enter a valid email address.");
+        emailInput.focus();
+        return;
+      }
 
+      /* Empty password */
 
-            /* Email format */
+      if (!password) {
+        alert("Please enter your password.");
+        passwordInput.focus();
+        return;
+      }
 
-            if (!emailInput.checkValidity()) {
-                alert("Please enter a valid email address.");
-                emailInput.focus();
-                return;
-            }
+      /* Login data */
 
+      const loginData = {
+        email: email,
+        password: password,
+      };
 
-            /* Empty password */
+      try {
+        /* Send login request to backend */
 
-            if (!password) {
-                alert("Please enter your password.");
-                passwordInput.focus();
-                return;
-            }
+        const response = await fetch("http://localhost:3000/api/auth/login", {
+          method: "POST",
 
+          headers: {
+            "Content-Type": "application/json",
+          },
 
-            /* Temporary frontend response */
-
-            alert(
-                "Login form validated successfully.\n\n" +
-                "College authentication will be connected with the backend later."
-            );
-
-            console.log("College login data is ready for API integration.");
-
+          body: JSON.stringify(loginData),
         });
 
-    }
+        /* Convert response into JSON */
 
+        const data = await response.json();
 
-    /* =========================================
+        console.log("College Login Response:", data);
+
+        /* Login failed */
+
+        if (!response.ok) {
+          alert(data.message || "Login failed.");
+          return;
+        }
+
+        /* Check college role */
+
+        if (!data.user || data.user.role !== "college") {
+          alert("This account is not a college account.");
+          return;
+        }
+
+        /* Save login information */
+
+        localStorage.setItem("token", data.token);
+
+        localStorage.setItem("user", JSON.stringify(data.user));
+
+        /* Login successful */
+
+        alert(data.message);
+
+        console.log("College login successful");
+
+        /* Open college dashboard */
+
+        window.location.href = "college-dashboard.html";
+      } catch (error) {
+        console.error("College login error:", error);
+
+        alert("Unable to connect to the server. Please try again.");
+      }
+    });
+  }
+
+  /* =========================================
        FORGOT PASSWORD
     ========================================= */
 
-    if (forgotPassword) {
+  if (forgotPassword) {
+    forgotPassword.addEventListener("click", (event) => {
+      event.preventDefault();
 
-        forgotPassword.addEventListener("click", (event) => {
-
-            event.preventDefault();
-
-            alert(
-                "Password recovery will be available after backend authentication is connected."
-            );
-
-        });
-
-    }
-
+      alert(
+        "Password recovery will be available after backend authentication is connected.",
+      );
+    });
+  }
 });
