@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (form) {
 
-        form.addEventListener("submit", (event) => {
+        form.addEventListener("submit", async(event) => {
 
             event.preventDefault();
 
@@ -241,27 +241,43 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            /* =================================
-               TEMPORARY FRONTEND SUCCESS
-            ================================= */
+            try {
+                const response = await fetch("http://localhost:3000/api/companies/register", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        companyName: document.getElementById("companyName").value.trim(),
+                        companyType: document.getElementById("companyType").value,
+                        industry: document.getElementById("industry").value,
+                        companyWebsite: document.getElementById("companyWebsite").value.trim(),
+                        companyEmail: document.getElementById("companyEmail").value.trim(),
+                        officeAddress: document.getElementById("officeAddress").value.trim(),
+                        state: document.getElementById("state").value,
+                        district: document.getElementById("district").value.trim(),
+                        pincode: pincode.value.trim(),
+                        representativeName: document.getElementById("representativeName").value.trim(),
+                        designation: document.getElementById("designation").value.trim(),
+                        officialMobile: mobile.value.trim(),
+                        alternateEmail: document.getElementById("alternateEmail").value.trim() || null,
+                        cinNumber: document.getElementById("cinNumber").value.trim(),
+                        gstNumber: document.getElementById("gstNumber").value.trim() || null,
+                        password: password.value,
+                    }),
+                });
 
-            alert(
-                "Company registration form submitted successfully!\n\n" +
-                "Your application will be reviewed by NPEPN."
-            );
+                const data = await response.json();
 
+                if (data.success) {
+                    alert("Company registered successfully! You can now login.");
+                    window.location.href = "company-login.html";
+                } else {
+                    alert(data.error.message || "Registration failed.");
+                }
+            } catch (error) {
+                alert("Server error. Please try again later.");
+            }
 
-            /*
-             * Backend/API will be connected here later.
-             *
-             * Later:
-             * 1. Send company information to PostgreSQL backend.
-             * 2. Upload verification documents.
-             * 3. Create pending company account.
-             * 4. Admin verifies company.
-             * 5. Company login becomes active.
-             */
-
+           
 
             console.log(
                 "Company registration validated successfully."

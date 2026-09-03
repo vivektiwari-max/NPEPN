@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
+const Dpc = require("../models/Dpc");
 const Student = require("../models/Student");
 const pool = require("../config/db");
 const config = require("../config/config");

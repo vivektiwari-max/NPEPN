@@ -131,146 +131,111 @@ document.addEventListener("DOMContentLoaded", () => {
     confirmPassword.addEventListener("input", checkPassword);
 
 
-    /* =========================================
+       /* =========================================
        FORM SUBMIT
     ========================================== */
 
     if (form) {
 
-        form.addEventListener("submit", (event) => {
-
+        form.addEventListener("submit", async (event) => { // 'a(event)' ko 'async (event)' kar diya hai
+            
             event.preventDefault();
 
-
             /* Browser validation */
-
             if (!form.checkValidity()) {
-
                 form.reportValidity();
-
                 return;
-
             }
-
 
             /* DPC mobile */
-
             if (mobile.value.length !== 10) {
-
-                alert(
-                    "Please enter a valid 10-digit official mobile number."
-                );
-
+                alert("Please enter a valid 10-digit official mobile number.");
                 mobile.focus();
-
                 return;
-
             }
-
 
             /* Officer mobile */
-
             if (officerMobile.value.length !== 10) {
-
-                alert(
-                    "Please enter a valid 10-digit officer mobile number."
-                );
-
+                alert("Please enter a valid 10-digit officer mobile number.");
                 officerMobile.focus();
-
                 return;
-
             }
-
 
             /* PIN */
-
             if (pincode.value.length !== 6) {
-
-                alert(
-                    "Please enter a valid 6-digit PIN code."
-                );
-
+                alert("Please enter a valid 6-digit PIN code.");
                 pincode.focus();
-
                 return;
-
             }
 
-
-            /* Password */
-
+            /* Password & Confirm Password Setup & Check */
             if (password.value.length < 8) {
-
-                alert(
-                    "Password must contain at least 8 characters."
-                );
-
+                alert("Password must contain at least 8 characters.");
                 password.focus();
-
                 return;
-
             }
-
-
-            /* Confirm Password */
 
             if (password.value !== confirmPassword.value) {
-
-                alert(
-                    "Password and Confirm Password do not match."
-                );
-
+                alert("Password and Confirm Password do not match.");
                 confirmPassword.focus();
-
                 return;
-
             }
-
 
             /* Files */
-
-            if (!validateFile(authorizationDocument)) {
-                return;
-            }
-
-            if (!validateFile(officerIdDocument)) {
-                return;
-            }
-
-            if (!validateFile(additionalDocument)) {
-                return;
-            }
-
+            if (!validateFile(authorizationDocument)) return;
+            if (!validateFile(officerIdDocument)) return;
+            if (!validateFile(additionalDocument)) return;
 
             /* =================================
-               TEMPORARY FRONTEND SUBMISSION
+               BACKEND CONNECTION (UPDATED)
             ================================= */
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "Registering...";
+            submitBtn.disabled = true;
 
-            alert(
-                "DPC registration submitted successfully!\n\n" +
-                "Your registration will be verified by NPEPN before account activation."
-            );
+            const formData = {
+                dpcName: document.getElementById("dpcName").value,
+                district: document.getElementById("district").value,
+                state: document.getElementById("state").value,
+                pincode: document.getElementById("pincode").value,
+                address: document.getElementById("address").value,
+                officialEmail: document.getElementById("officialEmail").value,
+                officialMobile: document.getElementById("officialMobile").value,
+                landline: document.getElementById("landline") ? document.getElementById("landline").value : "",
+                website: document.getElementById("website") ? document.getElementById("website").value : "",
+                officerName: document.getElementById("officerName").value,
+                designation: document.getElementById("designation").value,
+                officerEmail: document.getElementById("officerEmail").value,
+                officerMobile: document.getElementById("officerMobile").value,
+                password: password.value
+            };
 
+            try {
+                const response = await fetch("http://127.0.0.1:3000/api/dpc/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formData)
+                });
 
-            console.log(
-                "DPC registration form validated successfully."
-            );
+                const data = await response.json();
 
-
-            /*
-             * BACKEND WILL BE CONNECTED LATER
-             *
-             * 1. Send DPC details to API.
-             * 2. Store registration in PostgreSQL.
-             * 3. Upload verification documents.
-             * 4. Create account with PENDING status.
-             * 5. NPEPN/Admin verifies DPC.
-             * 6. APPROVED DPC gets dashboard access.
-             */
-
+                if (response.ok) {
+                    alert("DPC registration submitted successfully! You can now log in.");
+                    window.location.href = "dpc-login.html"; 
+                } else {
+                    alert(data.message || "Registration failed. Please try again.");
+                }
+            } catch (error) {
+                console.error("Error during DPC registration:", error);
+                alert("Cannot connect to backend server. Make sure Node.js is running.");
+            } finally {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
-
     }
 
 });

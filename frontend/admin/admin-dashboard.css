@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #eaeff1;
+  margin: 0;
+  padding: 20px;
+}
+.dashboard-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.header h1 {
+  margin: 0;
+  color: #333;
+}
+.logout-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  background: #c82333;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+th {
+  background: #0056b3;
+  color: white;
+}
+.approve-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.approve-btn:hover {
+  background: #218838;
+}
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.badge.company {
+  background: #17a2b8;
+  color: white;
+}
+.badge.dpc {
+  background: #fd7e14;
+  color: white;
+}
+.badge.college {
+  background: #6f42c1;
+  color: white;
+}

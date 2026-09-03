@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration | NPEPN</title>
+    <link rel="stylesheet" href="student-registration.css">
+</head>
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+    <header class="main-navbar">
+        <a href="../index.html" class="navbar-logo">
+            NPEPN
+        </a>
+
+        <nav class="navbar-links">
+            <a href="../index.html">Home</a>
+            <a href="../colleges/college-login.html">Colleges</a>
+            <a href="../companies/company-login.html">Companies</a>
+            <a href="../district-placement-cell/dpc-login.html">Placement Cells</a>
+        </nav>
+    </header>
+
+    <!-- =========================
+         PAGE CONTAINER
+    ========================== -->
+    <main class="registration-page">
+        <div class="registration-container">
+
+            <div class="page-header">
+                <span class="page-label">STUDENT ONBOARDING</span>
+                <h1>Student Registration</h1>
+                <p>
+                    Register your educational credentials and skills to connect with leading campus recruiters and district placement drives.
+                </p>
+            </div>
+
+            <form id="studentForm" class="registration-card">
+
+                <!-- SECTION 1: PERSONAL DETAILS -->
+                <div class="form-section">
+                    <div class="section-heading">
+                        <h2>1. Personal & Account Details</h2>
+                        <p>Enter your contact information and create secure login credentials.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" placeholder="e.g. student@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Mobile Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" placeholder="10-digit mobile number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password <span class="required">*</span></label>
+                            <input type="password" id="password" placeholder="Min. 8 characters" required>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+                            <input type="password" id="confirmPassword" placeholder="Re-enter your password" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: ACADEMIC DETAILS -->
+                <div class="form-section">
+                    <div class="section-heading">
+                        <h2>2. Academic & Institution Details</h2>
+                        <p>Specify your pursuing or completed professional degree and institution.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="degree">Professional Degree <span class="required">*</span></label>
+                            <select id="degree" required>
+                                <option value="">Select Degree</option>
+                                <option value="B.Tech">B.Tech (Bachelor of Technology)</option>
+                                <option value="BCA">BCA (Bachelor of Computer Applications)</option>
+                                <option value="MCA">MCA (Master of Computer Applications)</option>
+                                <option value="B.Pharm">B.Pharm (Bachelor of Pharmacy)</option>
+                                <option value="BBA">BBA (Bachelor of Business Administration)</option>
+                                <option value="MBA">MBA (Master of Business Administration)</option>
+                                <option value="Diploma">Polytechnic Diploma</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="district">District <span class="required">*</span></label>
+                            <select id="district" required>
+                                <option value="">Select District</option>
+                                <option value="Jaunpur">Jaunpur</option>
+                                <option value="Lucknow">Lucknow</option>
+                                <option value="Prayagraj">Prayagraj</option>
+                                <option value="Varanasi">Varanasi</option>
+                                <option value="Kanpur">Kanpur</option>
+                                <option value="Gorakhpur">Gorakhpur</option>
+                                <option value="Noida">Gautam Buddha Nagar (Noida)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="college">College / Institution Name <span class="required">*</span></label>
+                            <div class="college-search">
+                                <input
+                                    type="text"
+                                    id="college"
+                                    placeholder="Type to search your registered college..."
+                                    autocomplete="off"
+                                    required
+                                >
+                                <div id="collegeResults" class="college-results"></div>
+                            </div>
+                            <input type="hidden" id="collegeId">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: SKILLS & COMPETENCIES -->
+                <div class="form-section">
+                    <div class="section-heading">
+                        <h2>3. Technical Skills & Specialization</h2>
+                        <p>List your key technical tools, programming languages and domain expertise.</p>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="skills">Technical Skills <span class="required">*</span></label>
+                            <textarea
+                                id="skills"
+                                placeholder="e.g. Python, Java, JavaScript, React, Node.js, SQL, Git, Problem Solving"
+                                required
+                            ></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORM ACTIONS -->
+                <div class="form-actions">
+                    <div class="login-link">
+                        Already have an account?
+                        <a href="student-login.html">Sign in</a>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        Complete Registration
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <script src="student-registration.js"></script>
+</body>
+</html>

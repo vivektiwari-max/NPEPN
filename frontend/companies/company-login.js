@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (form) {
 
-        form.addEventListener("submit", (event) => {
+        form.addEventListener("submit", async (event) => {
 
             event.preventDefault();
 
@@ -109,27 +109,27 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            /* =================================
-               TEMPORARY FRONTEND LOGIN
-            ================================= */
+                    try {
+                const response = await fetch("http://localhost:3000/api/auth/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email, password: passwordValue }),
+                });
 
-            alert(
-                "Login validation successful.\n\n" +
-                "Backend authentication will be connected later."
-            );
+                const data = await response.json();
 
+                if (data.success) {
+                    localStorage.setItem("npepn_token", data.token);
+                    localStorage.setItem("npepn_user", JSON.stringify(data.user));
+                    alert("Login successful! Redirecting...");
+                    window.location.href = "company-dashboard.html";
+                } else {
+                    alert(data.error.message || "Login failed.");
+                }
+            } catch (error) {
+                alert("Server error. Please try again later.");
+            }
 
-            /*
-             * Backend/API will be connected here later.
-             *
-             * After backend integration:
-             *
-             * 1. Send email + password to API.
-             * 2. Verify company account.
-             * 3. Check whether company is approved.
-             * 4. Create authentication session/token.
-             * 5. Redirect to company dashboard.
-             */
 
 
             console.log("Company login form validated.");

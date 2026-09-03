@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | NPEPN</title>
+    <link rel="stylesheet" href="admin-login.css">
+</head>
+<body>
+    <div class="login-box">
+        <h2>Admin Portal Gateway</h2>
+        <form id="adminLoginForm">
+            <div class="form-group">
+                <label for="email">Admin Email Address</label>
+                <input type="email" id="email" required placeholder="admin@npepn.com">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required placeholder="Enter admin password">
+            </div>
+            <button type="submit" id="loginBtn">Secure Log In</button>
+            <div class="error-message" id="errorMsg"></div>
+        </form>
+    </div>
+    <script src="admin-login.js"></script>
+</body>
+</html>

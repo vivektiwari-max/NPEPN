@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | NPEPN</title>
+    <link rel="stylesheet" href="student-dashboard.css">
+</head>
+<body>
+
+    <!-- SIDEBAR OVERLAY FOR MOBILE -->
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <!-- =========================
+         SIDEBAR NAVIGATION
+    ========================== -->
+    <aside id="studentSidebar" class="sidebar">
+        <div class="sidebar-brand">
+            <a href="../index.html">NPEPN</a>
+            <span>STUDENT PORTAL</span>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="student-dashboard.html" class="menu-item active">
+                <span class="menu-icon">📊</span>
+                Dashboard Overview
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">👤</span>
+                My Profile
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">💼</span>
+                Job Opportunities
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">📅</span>
+                Campus Drives
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">📝</span>
+                Applied Jobs
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">🏆</span>
+                Hackathons & Events
+            </a>
+
+            <a href="#" class="menu-item">
+                <span class="menu-icon">⚙️</span>
+                Settings
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="../index.html" class="home-link">
+                ← Back to Main Portal
+            </a>
+            <button id="logoutBtn" class="logout-btn">
+                Log Out
+            </button>
+        </div>
+    </aside>
+
+    <!-- =========================
+         MAIN CONTENT AREA
+    ========================== -->
+    <div class="main-content">
+
+        <!-- TOP STICKY HEADER -->
+        <header class="top-header">
+            <div class="header-left">
+                <button id="mobileMenuBtn" class="mobile-menu-button">☰</button>
+                <div>
+                    <div class="header-label">PORTAL OVERVIEW</div>
+                    <h1>Student Placement Dashboard</h1>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button class="notification-button" title="Notifications">
+                    🔔
+                </button>
+
+                <div class="student-user">
+                    <div class="user-avatar">
+                        S
+                    </div>
+                    <div class="user-details">
+                        <strong id="topStudentName">Student User</strong>
+                        <span>Verified Candidate</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- DASHBOARD CONTENT -->
+        <main class="dashboard-content">
+
+            <!-- PROFILE HERO BANNER -->
+            <section class="student-profile-banner">
+                <div class="profile-left">
+                    <div class="student-large-avatar">
+                        🎓
+                        <div class="online-indicator"></div>
+                    </div>
+                    <div class="profile-info">
+                        <div class="name-row">
+                            <h2 id="bannerStudentName">Loading Profile...</h2>
+                            <span class="verified-badge">✓ Active Student</span>
+                        </div>
+                        <div class="profile-meta-row">
+                            <span id="bannerStudentDegree">Degree</span> •
+                            <span id="bannerStudentCollege">College</span> •
+                            <span id="bannerStudentDistrict">District</span>
+                        </div>
+                        <div class="profile-meta-row">
+                            <span id="bannerStudentEmail">email@example.com</span> •
+                            <span id="bannerStudentPhone">Phone</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="edit-btn">
+                    Edit Profile
+                </button>
+            </section>
+
+            <!-- STATS COUNTER GRID -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Applied Jobs</span>
+                        <div class="stat-icon">📄</div>
+                    </div>
+                    <strong>12</strong>
+                    <p>Applications submitted</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Shortlisted</span>
+                        <div class="stat-icon">⭐</div>
+                    </div>
+                    <strong>3</strong>
+                    <p>Companies shortlisted you</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Interviews</span>
+                        <div class="stat-icon">📅</div>
+                    </div>
+                    <strong>2</strong>
+                    <p>Upcoming rounds</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>District Drives</span>
+                        <div class="stat-icon">🏢</div>
+                    </div>
+                    <strong>5</strong>
+                    <p>Active placement drives</p>
+                </div>
+            </section>
+
+            <!-- TWO COLUMN DASHBOARD GRID -->
+            <div class="dashboard-grid">
+
+                <!-- CARD 1: PROFILE OVERVIEW -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Academic & Profile Summary</h3>
+                            <p>Your verified academic records</p>
+                        </div>
+                        <a href="#">Update Details</a>
+                    </div>
+
+                    <div class="info-list">
+                        <div class="info-item">
+                            <strong>Candidate Name</strong>
+                            <span id="overviewName">...</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Email Address</strong>
+                            <span id="overviewEmail">...</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Contact Number</strong>
+                            <span id="overviewPhone">...</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Professional Degree</strong>
+                            <span id="overviewDegree">...</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>College / Institute</strong>
+                            <span id="overviewCollege">...</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>District Zone</strong>
+                            <span id="overviewDistrict">...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2: TECHNICAL SKILLS & DRIVES -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <div>
+                            <h3>Skills & Direct Opportunities</h3>
+                            <p>Skills matched with recruiter requirements</p>
+                        </div>
+                        <a href="#">Add Skills</a>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 10px;">Tagged Skills</label>
+                        <div id="overviewSkills" class="skills-container">
+                            <span class="skill-badge">Technical Profile</span>
+                        </div>
+                    </div>
+
+                    <div style="border-top: 1px solid var(--border-color); padding-top: 16px;">
+                        <label style="display: block; font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 10px;">Recommended Drives</label>
+                        <div style="background: var(--bg-page); padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                            <strong style="color: var(--navy); font-size: 13.5px; display: block;">Annual District IT Mega Job Drive 2026</strong>
+                            <p style="color: var(--text-muted); font-size: 12px; margin-top: 2px;">Organized by District Placement Cell for Technical & Management Graduates</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <script src="student-dashboard.js"></script>
+</body>
+</html>

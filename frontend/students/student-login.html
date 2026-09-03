@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login | NPEPN</title>
+    <link rel="stylesheet" href="student-login.css">
+</head>
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+    <header class="main-navbar">
+        <a href="../index.html" class="navbar-logo">
+            NPEPN
+        </a>
+
+        <nav class="navbar-links">
+            <a href="../index.html">Home</a>
+            <a href="../colleges/college-login.html">Colleges</a>
+            <a href="../companies/company-login.html">Companies</a>
+            <a href="../district-placement-cell/dpc-login.html">Placement Cells</a>
+        </nav>
+    </header>
+
+    <!-- =========================
+         LOGIN PAGE
+    ========================== -->
+    <main class="login-page">
+        <section class="login-card">
+            <div class="login-header">
+                <div class="student-icon">
+                    🎓
+                </div>
+
+                <p class="page-label">
+                    STUDENT PORTAL
+                </p>
+
+                <h1>
+                    Student Login
+                </h1>
+
+                <p class="login-description">
+                    Sign in to access your NPEPN student dashboard, placement drives and track interview schedules.
+                </p>
+            </div>
+
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <div class="input-wrapper">
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="e.g. student@example.com"
+                            required
+                            autocomplete="email"
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="input-wrapper">
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            required
+                            autocomplete="current-password"
+                        >
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Sign In to Student Portal
+                </button>
+            </form>
+
+            <div class="login-footer">
+                <p>
+                    Don't have a student account?
+                    <a href="student-register.html">Register here</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="main-footer">
+        <p>© 2026 NPEPN - National Professional Education & Employment Network</p>
+    </footer>
+
+    <script src="student-login.js"></script>
+</body>
+</html>

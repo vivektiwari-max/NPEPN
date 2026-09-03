@@ -123,10 +123,10 @@ const collegesController = {
 
       // Create user
       const userResult = await client.query(
-        `INSERT INTO users (email, password_hash, role)
-         VALUES ($1, $2, $3)
+        `INSERT INTO users (email, password_hash, role, approval_status)
+         VALUES ($1, $2, $3, $4)
          RETURNING id`,
-        [email, passwordHash, "college"],
+        [email, passwordHash, 'college', 'pending'],
       );
 
       const userId = userResult.rows[0].id;

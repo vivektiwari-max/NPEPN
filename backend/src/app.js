@@ -19,6 +19,12 @@ const {
 const authRoutes = require("./routes/auth.routes");
 const studentsRoutes = require("./routes/students.routes");
 const collegesRoutes = require("./routes/colleges.routes");
+const companiesRoutes = require("./routes/companies.routes");
+const dpcRoutes = require("./routes/dpc.routes");
+const adminRoutes = require("./routes/admin.routes");
+
+
+
 
 const app = express();
 
@@ -58,10 +64,11 @@ app.get("/", (req, res) => {
 // ==========================================
 
 app.use("/api/auth", authRoutes);
-app.post("/api/login", authController.login);
 app.use("/api/students", studentsRoutes);
 app.use("/api/colleges", collegesRoutes);
-
+app.use("/api/companies", companiesRoutes);
+app.use("/api/dpc", dpcRoutes);
+app.use("/api/admin", adminRoutes);
 // ==========================================
 // ERROR HANDLING
 // ==========================================

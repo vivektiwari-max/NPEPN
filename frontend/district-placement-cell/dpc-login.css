@@ -1,5 +1,5 @@
 /* =========================================
-   NPEPN - DPC LOGIN
+   NPEPN - UNIFIED DPC LOGIN STYLES
 ========================================= */
 
 * {
@@ -9,24 +9,34 @@
 }
 
 :root {
-    --primary: #315fe8;
-    --primary-dark: #244ed0;
-    --text: #162640;
-    --muted: #718096;
-    --border: #e2e7ef;
-    --background: #f5f7fb;
-    --white: #ffffff;
-    --danger: #d44a4a;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-light: #eff6ff;
+    --navy: #0f172a;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --bg-page: #f8fafc;
+    --bg-card: #ffffff;
+    --success: #16a34a;
+    --success-bg: #f0fdf4;
+    --success-border: #bbf7d0;
+    --danger: #dc2626;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 25px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
 }
 
 body {
     min-height: 100vh;
-
-    font-family: Arial, Helvetica, sans-serif;
-
-    background: var(--background);
-
-    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* =========================================
@@ -35,47 +45,39 @@ body {
 
 .main-navbar {
     height: 70px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 0 6%;
-
-    background: var(--white);
-
-    border-bottom: 1px solid var(--border);
-
+    padding: 0 clamp(16px, 5vw, 60px);
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
-
     z-index: 100;
 }
 
 .navbar-logo {
     color: var(--primary);
-
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 800;
-
+    letter-spacing: -0.5px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .navbar-links {
     display: flex;
     align-items: center;
-
     gap: 28px;
 }
 
 .navbar-links a {
-    color: #536581;
-
-    font-size: 12px;
-    font-weight: 600;
-
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
     text-decoration: none;
-
     transition: color 0.2s ease;
 }
 
@@ -84,20 +86,20 @@ body {
 }
 
 /* =========================================
-   LOGIN PAGE
+   PAGE CONTAINER
 ========================================= */
 
 .login-page {
     min-height: calc(100vh - 70px);
-
     display: flex;
+    align-items: center;
     justify-content: center;
-
-    padding: 45px 20px 55px;
+    padding: clamp(24px, 4vw, 48px) 16px;
 }
 
 .login-container {
-    width: min(470px, 100%);
+    width: 100%;
+    max-width: 480px;
 }
 
 /* =========================================
@@ -106,37 +108,31 @@ body {
 
 .page-header {
     text-align: center;
-
-    margin-bottom: 27px;
+    margin-bottom: 28px;
 }
 
 .page-label {
+    display: inline-block;
     color: var(--primary);
-
-    font-size: 9px;
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-
-    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 6px;
 }
 
 .page-header h1 {
-    color: var(--text);
-
     font-size: 26px;
-
-    line-height: 1.25;
-
-    margin-bottom: 9px;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
 }
 
 .page-header p:last-child {
-    color: var(--muted);
-
-    font-size: 10px;
-
-    line-height: 1.7;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
 }
 
 /* =========================================
@@ -144,89 +140,66 @@ body {
 ========================================= */
 
 .login-card {
-    background: var(--white);
-
-    border: 1px solid #e5e9f0;
-
-    border-radius: 13px;
-
-    box-shadow: 0 12px 35px rgba(18, 35, 63, 0.06);
-
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
     overflow: hidden;
 }
-
-/* =========================================
-   CARD HEADER
-========================================= */
 
 .login-card-header {
     display: flex;
     align-items: center;
-
-    gap: 13px;
-
-    padding: 22px 24px;
-
-    border-bottom: 1px solid #edf0f4;
+    gap: 16px;
+    padding: 24px 28px;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .login-icon {
-    width: 43px;
-    height: 43px;
-
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-
     flex-shrink: 0;
-
-    border-radius: 10px;
-
-    background: #edf2ff;
-
+    border-radius: 12px;
+    background: var(--primary-light);
     color: var(--primary);
-
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 800;
-
     letter-spacing: 0.5px;
 }
 
 .login-card-header h2 {
-    color: var(--text);
-
-    font-size: 13px;
-
-    margin-bottom: 4px;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 2px;
 }
 
 .login-card-header p {
-    color: #929dac;
-
-    font-size: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
 }
 
 /* =========================================
-   FORM
+   FORM STYLES
 ========================================= */
 
 #dpcLoginForm {
-    padding: 24px;
+    padding: 28px;
 }
 
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
-
-    color: #34445d;
-
-    font-size: 10px;
-    font-weight: 700;
-
-    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 8px;
 }
 
 .required {
@@ -237,49 +210,35 @@ body {
 .form-group input[type="password"],
 .password-wrapper input {
     width: 100%;
-
-    padding: 11px 12px;
-
-    border: 1px solid #dce2eb;
-
-    border-radius: 7px;
-
-    background: #ffffff;
-
-    color: var(--text);
-
+    height: 46px;
+    padding: 10px 14px;
+    font-size: 14px;
     font-family: inherit;
-
-    font-size: 10px;
-
+    color: var(--text-main);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
     outline: none;
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.form-group input::placeholder {
-    color: #a8b1bf;
+.form-group input::placeholder,
+.password-wrapper input::placeholder {
+    color: #94a3b8;
 }
 
 .form-group input:focus,
 .password-wrapper input:focus {
     border-color: var(--primary);
-
-    box-shadow: 0 0 0 3px rgba(49, 95, 232, 0.08);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
-/* =========================================
-   PASSWORD
-========================================= */
-
+/* Password Toggle */
 .password-label {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    margin-bottom: 7px;
+    margin-bottom: 8px;
 }
 
 .password-label label {
@@ -288,10 +247,8 @@ body {
 
 .password-label a {
     color: var(--primary);
-
-    font-size: 8px;
-    font-weight: 700;
-
+    font-size: 13px;
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -301,215 +258,143 @@ body {
 
 .password-wrapper {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .password-wrapper input {
-    padding-right: 55px;
+    padding-right: 64px;
 }
 
 .toggle-password {
     position: absolute;
-
-    top: 50%;
-    right: 10px;
-
-    transform: translateY(-50%);
-
-    border: none;
-
+    right: 12px;
     background: transparent;
-
+    border: none;
     color: var(--primary);
-
-    font-family: inherit;
-
-    font-size: 8px;
-    font-weight: 700;
-
+    font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
+    padding: 6px;
 }
 
-/* =========================================
-   REMEMBER ME
-========================================= */
-
+/* Remember Me */
 .remember-row {
-    margin-top: -3px;
-
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .remember-option {
     display: inline-flex;
     align-items: center;
-
-    gap: 7px;
-
-    color: #77859a;
-
-    font-size: 9px;
-
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 13px;
     cursor: pointer;
+    user-select: none;
 }
 
 .remember-option input {
-    width: 13px;
-    height: 13px;
-
+    width: 16px;
+    height: 16px;
     accent-color: var(--primary);
-
     cursor: pointer;
 }
 
-/* =========================================
-   LOGIN BUTTON
-========================================= */
-
+/* Submit Button */
 .login-btn {
     width: 100%;
-
-    padding: 12px 18px;
-
-    border: none;
-
-    border-radius: 7px;
-
-    background: var(--primary);
-
+    height: 48px;
+    background-color: var(--primary);
     color: #ffffff;
-
-    font-family: inherit;
-
-    font-size: 10px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 15px;
     font-weight: 700;
-
+    font-family: inherit;
     cursor: pointer;
-
-    box-shadow: 0 6px 16px rgba(49, 95, 232, 0.18);
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
 }
 
 .login-btn:hover {
-    background: var(--primary-dark);
-
-    transform: translateY(-1px);
+    background-color: var(--primary-hover);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
 }
 
 .login-btn:active {
-    transform: translateY(0);
+    transform: translateY(1px);
 }
 
-/* =========================================
-   REGISTER LINK
-========================================= */
-
+/* Register link */
 .register-link {
-    padding: 17px 24px;
-
-    border-top: 1px solid #edf0f4;
-
-    background: #fafbfd;
-
+    padding: 18px 28px;
+    border-top: 1px solid var(--border-color);
+    background-color: #fcfdfe;
     text-align: center;
-
-    color: #8995a6;
-
-    font-size: 9px;
-
-    line-height: 1.6;
+    font-size: 14px;
+    color: var(--text-muted);
 }
 
 .register-link a {
     color: var(--primary);
-
     font-weight: 700;
-
     text-decoration: none;
+    margin-left: 4px;
 }
 
 .register-link a:hover {
     text-decoration: underline;
 }
 
-/* =========================================
-   VERIFICATION NOTICE
-========================================= */
-
+/* Verification Notice */
 .verification-notice {
     display: flex;
     align-items: flex-start;
-
-    gap: 10px;
-
-    margin-top: 18px;
-
-    padding: 14px 16px;
-
-    background: #eefaf5;
-
-    border: 1px solid #d6f0e4;
-
-    border-radius: 8px;
+    gap: 14px;
+    margin-top: 24px;
+    padding: 16px 20px;
+    background-color: var(--success-bg);
+    border: 1px solid var(--success-border);
+    border-radius: var(--radius-md);
 }
 
 .notice-icon {
-    width: 25px;
-    height: 25px;
-
+    width: 28px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
-
     flex-shrink: 0;
-
     border-radius: 50%;
-
-    background: #d9f4e8;
-
-    color: #15915c;
-
-    font-size: 11px;
+    background-color: #dcfce7;
+    color: var(--success);
+    font-size: 14px;
     font-weight: 800;
 }
 
 .verification-notice strong {
     display: block;
-
-    color: #237653;
-
-    font-size: 9px;
-
-    margin-bottom: 4px;
+    color: #166534;
+    font-size: 13px;
+    margin-bottom: 2px;
 }
 
 .verification-notice p {
-    color: #719184;
-
-    font-size: 8px;
-
-    line-height: 1.6;
+    color: #15803d;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
-/* =========================================
-   BACK HOME
-========================================= */
-
+/* Back Home */
 .back-home {
     display: block;
-
-    margin-top: 18px;
-
-    color: #7e8b9e;
-
+    margin-top: 20px;
+    color: var(--text-muted);
     text-align: center;
-
-    font-size: 9px;
+    font-size: 13px;
     font-weight: 600;
-
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .back-home:hover {
@@ -517,66 +402,27 @@ body {
 }
 
 /* =========================================
-   TABLET
+   RESPONSIVE DESIGN
 ========================================= */
 
-@media (max-width: 600px) {
-
+@media (max-width: 640px) {
     .main-navbar {
-        height: 62px;
-
-        padding: 0 20px;
+        height: 60px;
     }
 
     .navbar-links {
         display: none;
     }
 
-    .login-page {
-        min-height: calc(100vh - 62px);
-
-        padding: 30px 13px 40px;
-    }
-
-    .page-header h1 {
-        font-size: 23px;
+    #dpcLoginForm {
+        padding: 20px 18px;
     }
 
     .login-card-header {
-        padding: 19px;
-    }
-
-    #dpcLoginForm {
-        padding: 20px;
-    }
-
-    .register-link {
-        padding: 16px 18px;
-    }
-
-}
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 380px) {
-
-    .login-page {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 18px;
     }
 
     .page-header h1 {
-        font-size: 21px;
+        font-size: 22px;
     }
-
-    .login-card-header {
-        padding: 17px;
-    }
-
-    #dpcLoginForm {
-        padding: 17px;
-    }
-
 }

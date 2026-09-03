@@ -13,7 +13,7 @@ const validators = {
 
   // Password validation
   isValidPassword: (password) => {
-    return password && password.length >= 8;
+    return password && REGEX.PASSWORD.test(password);
   },
 
   // URL validation

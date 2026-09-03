@@ -57,6 +57,16 @@ const authController = {
         });
       }
 
+      // Check if Admin has approved the account yet
+      if (user.role !== 'admin' && user.role !== 'student' && user.approval_status === 'pending') {
+        return res.status(STATUS_CODES.FORBIDDEN).json({
+          success: false,
+          error: {
+            message: "Approval pending. The admin has not verified your account yet.",
+          },
+        });
+      }
+
       // Generate JWT token
       const token = jwt.sign(
         {

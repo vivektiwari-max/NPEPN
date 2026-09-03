@@ -32,104 +32,109 @@
 
     <!-- ================= NAVBAR ================= -->
     <header class="navbar">
-        <!-- MENU BUTTON -->
-<button id="menuBtn" class="menu-btn">☰</button>
 
-<!-- SIDE MENU -->
-<div id="sideMenu" class="side-menu">
+        <!-- BRAND LEFT: MENU BTN + LOGO -->
+        <div class="navbar-brand-left">
+            <!-- MENU BUTTON -->
+            <button id="menuBtn" class="menu-btn" title="Open Navigation Menu">☰</button>
 
-    <div class="menu-header">
-        <h4>Menu</h4>
-        <button id="closeMenu" class="close-btn">&times;</button>
-    </div>
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                <img src="images/npepn.png" alt="NPEPN Logo">
+            </a>
+        </div>
 
-    <ul class="menu-list">
+        <!-- SIDE MENU -->
+        <div id="sideMenu" class="side-menu">
 
-        <li>
-            <a href="#">Home</a>
-        </li>
-
-        <!-- STUDENT -->
-        <li class="dropdown">
-            <div class="dropdown-title">
-                Student <span>▼</span>
+            <div class="menu-header">
+                <h4>Menu</h4>
+                <button id="closeMenu" class="close-btn">&times;</button>
             </div>
 
-            <ul class="submenu">
-                <li><a href="student-login.html">Student Login</a></li>
-                <li><a href="student-register.html">Student Registration</a></li>
+            <ul class="menu-list">
+
+                <li>
+                    <a href="#">Home</a>
+                </li>
+
+                <!-- STUDENT -->
+                <li class="dropdown">
+                    <div class="dropdown-title">
+                        Student <span>▼</span>
+                    </div>
+
+                    <ul class="submenu">
+                        <li><a href="students/student-login.html">Student Login</a></li>
+                        <li><a href="students/student-register.html">Student Registration</a></li>
+                    </ul>
+                </li>
+
+                <!-- COLLEGE -->
+                <li class="dropdown">
+                    <div class="dropdown-title">
+                        College <span>▼</span>
+                    </div>
+
+                    <ul class="submenu">
+                        <li><a href="colleges/college-login.html">College Login</a></li>
+                        <li><a href="colleges/college-registration.html">College Registration</a></li>
+                        <li><a href="colleges/college-directory.html">College Directory</a></li>
+                    </ul>
+                </li>
+
+                <!-- COMPANY -->
+                <li class="dropdown">
+                    <div class="dropdown-title">
+                        Company <span>▼</span>
+                    </div>
+
+                    <ul class="submenu">
+                        <li><a href="companies/company-login.html">Company Login</a></li>
+                        <li><a href="companies/company-registration.html">Company Registration</a></li>
+                    </ul>
+                </li>
+
+                <!-- DISTRICT PLACEMENT CELL -->
+                <li class="dropdown">
+                    <div class="dropdown-title">
+                        District Placement Cell <span>▼</span>
+                    </div>
+
+                    <ul class="submenu">
+                        <li><a href="district-placement-cell/dpc-login.html">Placement Cell Login</a></li>
+                        <li><a href="district-placement-cell/dpc-registration.html">Placement Cell Registration</a></li>
+                    </ul>
+                </li>
+
+                <!-- ADMIN -->
+                <li class="dropdown">
+                    <div class="dropdown-title">
+                        Admin <span>▼</span>
+                    </div>
+
+                    <ul class="submenu">
+                        <li><a href="admin/admin-login.html">Admin Login</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#">Trainings</a>
+                </li>
+
+                <li>
+                    <a href="#">Placement Statistics / Records</a>
+                </li>
+
+                <li>
+                    <a href="#">Gallery</a>
+                </li>
+
             </ul>
-        </li>
+        </div>
 
-        <!-- COLLEGE -->
-        <li class="dropdown">
-            <div class="dropdown-title">
-                College <span>▼</span>
-            </div>
-
-            <ul class="submenu">
-                <li><a href="colleges/college-login.html">College Login</a></li>
-                <li><a href="colleges/college-registration.html">College Registration</a></li>
-                <li><a href="colleges/college-directory.html">College Directory</a></li>
-            </ul>
-        </li>
-
-        <!-- COMPANY -->
-        <li class="dropdown">
-            <div class="dropdown-title">
-                Company <span>▼</span>
-            </div>
-
-            <ul class="submenu">
-                <li><a href="companies/company-login.html">Company Login</a></li>
-                <li><a href="companies/company-registration.html">Company Registration</a></li>
-            </ul>
-        </li>
-
-        <!-- DISTRICT PLACEMENT CELL -->
-        <li class="dropdown">
-            <div class="dropdown-title">
-                District Placement Cell <span>▼</span>
-            </div>
-
-            <ul class="submenu">
-                <li><a href="district-placement-cell/dpc-login.html">Placement Cell Login</a></li>
-                <li><a href="district-placement-cell/dpc-registration.html">Placement Cell Registration</a></li>
-            </ul>
-        </li>
-
-        <!-- ADMIN -->
-        <li class="dropdown">
-            <div class="dropdown-title">
-                Admin <span>▼</span>
-            </div>
-
-            <ul class="submenu">
-                <li><a href="#">Admin Login</a></li>
-            </ul>
-        </li>
-
-        <li>
-            <a href="#">Trainings</a>
-        </li>
-
-        <li>
-            <a href="#">Placement Statistics / Records</a>
-        </li>
-
-        <li>
-            <a href="#">Gallery</a>
-        </li>
-
-    </ul>
-</div>
-
-<!-- DARK OVERLAY -->
-<div id="overlay" class="overlay"></div>
-     
-       <div class="logo">
-    <img src="images/npepn.png" alt="NPEPN Logo">
-</div>
+        <!-- DARK OVERLAY -->
+        <div id="overlay" class="overlay"></div>
 
         <nav class="navigation">
 
@@ -173,7 +178,7 @@
 
         <div class="auth-dropdown-menu">
 
-            <a href="student-login.html">
+            <a href="students/student-login.html">
                 Student Login
             </a>
 
@@ -187,6 +192,10 @@
 
             <a href="companies/company-login.html">
                 Company Login
+            </a>
+
+            <a href="admin/admin-login.html">
+                Admin Login
             </a>
 
         </div>
@@ -203,7 +212,7 @@
 
         <div class="auth-dropdown-menu">
 
-            <a href="student-register.html">
+            <a href="students/student-register.html">
                 Student Registration
             </a>
 
@@ -258,7 +267,7 @@
 
                 <div class="hero-buttons">
 
-                    <a href="student-register.html"
+                    <a href="students/student-register.html"
                        class="hero-btn primary">
                         🎓 &nbsp; I'm a Student
                     </a>

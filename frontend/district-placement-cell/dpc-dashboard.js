@@ -1,6 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================================
+       SESSION PROTECTION
+    ========================================== */
+    const dpcToken = localStorage.getItem("dpcToken");
+    const dpcDataString = localStorage.getItem("dpcData");
+
+    if (!dpcToken || !dpcDataString) {
+        alert("Session Expired or Not Logged In. Please login first.");
+        window.location.href = "dpc-login.html";
+        return;
+    }
+
+    const dpcData = JSON.parse(dpcDataString);
+
+    /* =========================================
        ELEMENTS
     ========================================== */
 
@@ -289,11 +303,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     return;
                 }
 
+                // Remove Token and Data
+                localStorage.removeItem("dpcToken");
+                localStorage.removeItem("dpcData");
 
-                /*
-                 * Backend authentication will be
-                 * connected later.
-                 */
+
+
 
                 window.location.href =
                     "dpc-login.html";

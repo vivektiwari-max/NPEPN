@@ -1,5 +1,5 @@
 /* =========================================
-   COLLEGE LOGIN - NPEPN
+   NPEPN - UNIFIED COLLEGE LOGIN STYLES
 ========================================= */
 
 * {
@@ -8,10 +8,35 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --primary-light: #eff6ff;
+    --navy: #0f172a;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --bg-page: #f8fafc;
+    --bg-card: #ffffff;
+    --success: #16a34a;
+    --success-bg: #f0fdf4;
+    --success-border: #bbf7d0;
+    --danger: #dc2626;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 25px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f7fb;
-    color: #12233f;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* =========================================
@@ -19,24 +44,27 @@ body {
 ========================================= */
 
 .main-navbar {
-    height: 72px;
-
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    padding: 0 6.5%;
-
-    background: #ffffff;
-
-    border-bottom: 1px solid #e5e9ef;
+    padding: 0 clamp(16px, 5vw, 60px);
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .navbar-logo {
-    color: #12233f;
-    font-size: 26px;
-    font-weight: 700;
+    color: var(--primary);
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .navbar-links {
@@ -46,52 +74,41 @@ body {
 }
 
 .navbar-links a {
-    color: #12233f;
+    color: var(--text-muted);
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
-
     transition: color 0.2s ease;
 }
 
 .navbar-links a:hover {
-    color: #315fdb;
+    color: var(--primary);
 }
 
 /* =========================================
-   LOGIN PAGE
+   PAGE CONTAINER
 ========================================= */
 
 .login-page {
-    min-height: calc(100vh - 72px);
-
+    min-height: calc(100vh - 70px);
     display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 55px 20px 70px;
+    padding: clamp(24px, 4vw, 48px) 16px;
 }
-
-/* =========================================
-   LOGIN CARD
-========================================= */
 
 .login-card {
     width: 100%;
-    max-width: 460px;
-
-    background: #ffffff;
-
-    border: 1px solid #e0e5ec;
-    border-radius: 10px;
-
-    padding: 40px 38px;
-
-    box-shadow: 0 8px 25px rgba(18, 35, 63, 0.05);
+    max-width: 480px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: clamp(24px, 5vw, 40px);
 }
 
 /* =========================================
-   LOGIN HEADER
+   HEADER SECTION
 ========================================= */
 
 .login-header {
@@ -100,251 +117,187 @@ body {
 }
 
 .college-icon {
-    width: 52px;
-    height: 52px;
-
-    margin: 0 auto 18px;
-
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background: #12233f;
-    color: #ffffff;
-
-    border-radius: 12px;
-
-    font-size: 22px;
-    font-weight: 700;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 14px;
+    font-size: 24px;
+    font-weight: 800;
 }
 
 .page-label {
-    color: #315fdb;
-
-    font-size: 11px;
+    display: inline-block;
+    color: var(--primary);
+    font-size: 12px;
     font-weight: 700;
-
-    letter-spacing: 1.5px;
-
-    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 6px;
 }
 
 .login-header h1 {
-    color: #12233f;
-
-    font-size: 28px;
-    font-weight: 700;
-
-    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
 }
 
 .login-description {
-    color: #718096;
-
-    font-size: 13px;
-    line-height: 1.6;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
 }
 
 /* =========================================
-   FORM
+   FORM STYLES
 ========================================= */
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-
     margin-bottom: 20px;
 }
 
 .form-group label {
-    color: #12233f;
-
+    display: block;
     font-size: 13px;
     font-weight: 600;
-
+    color: var(--navy);
     margin-bottom: 8px;
 }
 
-.form-group input {
+.form-group input[type="email"],
+.form-group input[type="password"],
+.password-wrapper input {
     width: 100%;
-    height: 44px;
-
-    padding: 0 13px;
-
-    border: 1px solid #d3dbe6;
-    border-radius: 6px;
-
-    background: #ffffff;
-
-    color: #12233f;
-
-    font-family: inherit;
+    height: 46px;
+    padding: 10px 14px;
     font-size: 14px;
-
+    font-family: inherit;
+    color: var(--text-main);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
     outline: none;
-
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.form-group input::placeholder {
-    color: #9aa6b6;
+.form-group input::placeholder,
+.password-wrapper input::placeholder {
+    color: #94a3b8;
 }
 
-.form-group input:hover {
-    border-color: #b8c4d2;
+.form-group input:focus,
+.password-wrapper input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
-.form-group input:focus {
-    border-color: #315fdb;
-
-    box-shadow: 0 0 0 3px rgba(49, 95, 219, 0.08);
-}
-
-/* =========================================
-   PASSWORD
-========================================= */
-
+/* Password Toggle */
 .password-wrapper {
     position: relative;
-    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .password-wrapper input {
-    padding-right: 65px;
+    padding-right: 64px;
 }
 
 .password-toggle {
     position: absolute;
-
     right: 12px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    border: none;
     background: transparent;
-
-    color: #315fdb;
-
-    font-family: inherit;
-    font-size: 12px;
+    border: none;
+    color: var(--primary);
+    font-size: 13px;
     font-weight: 600;
-
     cursor: pointer;
+    padding: 6px;
 }
 
 .password-toggle:hover {
-    text-decoration: underline;
+    color: var(--primary-hover);
 }
 
-/* =========================================
-   LOGIN OPTIONS
-========================================= */
-
+/* Login Options */
 .login-options {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    margin: 2px 0 24px;
+    margin-bottom: 24px;
+    font-size: 13px;
 }
 
 .remember-me {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
-
-    color: #68778e;
-
-    font-size: 12.5px;
-
+    color: var(--text-muted);
     cursor: pointer;
+    user-select: none;
 }
 
 .remember-me input {
-    width: 15px;
-    height: 15px;
-
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary);
     cursor: pointer;
-
-    accent-color: #12233f;
 }
 
 .forgot-password {
-    color: #315fdb;
-
-    font-size: 12.5px;
+    color: var(--primary);
     font-weight: 600;
-
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .forgot-password:hover {
+    color: var(--primary-hover);
     text-decoration: underline;
 }
 
-/* =========================================
-   LOGIN BUTTON
-========================================= */
-
+/* Submit Button */
 .login-btn {
     width: 100%;
-    height: 45px;
-
-    border: none;
-    border-radius: 6px;
-
-    background: #12233f;
+    height: 48px;
+    background-color: var(--primary);
     color: #ffffff;
-
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 700;
     font-family: inherit;
-
-    font-size: 14px;
-    font-weight: 600;
-
     cursor: pointer;
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
 }
 
 .login-btn:hover {
-    background: #1c3154;
-
-    box-shadow: 0 5px 15px rgba(18, 35, 63, 0.15);
-
-    transform: translateY(-1px);
+    background-color: var(--primary-hover);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
 }
 
 .login-btn:active {
-    transform: translateY(0);
+    transform: translateY(1px);
 }
 
-/* =========================================
-   REGISTER LINK
-========================================= */
-
+/* Register link */
 .register-link {
+    margin-top: 24px;
     text-align: center;
-
-    margin-top: 21px;
-
-    color: #718096;
-
-    font-size: 12.5px;
+    font-size: 14px;
+    color: var(--text-muted);
 }
 
 .register-link a {
-    color: #315fdb;
-
-    font-weight: 600;
-
+    color: var(--primary);
+    font-weight: 700;
     text-decoration: none;
-
     margin-left: 4px;
 }
 
@@ -352,111 +305,42 @@ body {
     text-decoration: underline;
 }
 
-/* =========================================
-   VERIFICATION MESSAGE
-========================================= */
-
+/* Verification Note */
 .verification-message {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-
     margin-top: 28px;
-    padding: 15px;
-
-    background: #f6f8fc;
-
-    border: 1px solid #e1e6ee;
-    border-radius: 7px;
-
-    text-align: center;
-
-    color: #718096;
-
-    font-size: 11.5px;
+    padding: 14px 16px;
+    background-color: var(--success-bg);
+    border: 1px solid var(--success-border);
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    color: #15803d;
     line-height: 1.5;
 }
 
 .verification-message strong {
-    color: #12233f;
-
-    font-size: 12px;
+    display: block;
+    color: #166534;
+    margin-bottom: 2px;
 }
 
 /* =========================================
-   RESPONSIVE
+   RESPONSIVE DESIGN
 ========================================= */
 
-@media (max-width: 700px) {
-
+@media (max-width: 640px) {
     .main-navbar {
-        height: auto;
-        min-height: 65px;
-
-        padding: 14px 20px;
-
-        flex-direction: column;
-        gap: 13px;
+        height: 60px;
     }
 
     .navbar-links {
-        gap: 18px;
-
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .navbar-links a {
-        font-size: 13px;
-    }
-
-    .login-page {
-        min-height: calc(100vh - 120px);
-
-        padding: 40px 15px 55px;
-    }
-}
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 480px) {
-
-    .login-page {
-        padding: 30px 10px 45px;
+        display: none;
     }
 
     .login-card {
-        padding: 30px 20px;
-        border-radius: 8px;
-    }
-
-    .login-header {
-        margin-bottom: 28px;
-    }
-
-    .college-icon {
-        width: 48px;
-        height: 48px;
-
-        font-size: 20px;
+        padding: 24px 18px;
     }
 
     .login-header h1 {
-        font-size: 24px;
-    }
-
-    .login-description {
-        font-size: 12.5px;
-    }
-
-    .login-options {
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .forgot-password {
-        white-space: nowrap;
+        font-size: 22px;
     }
 }

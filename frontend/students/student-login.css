@@ -1,6 +1,6 @@
 /* =========================================
-   NPEPN - UNIFIED COMPANY LOGIN STYLES
-========================================= */
+   NPEPN - UNIFIED STUDENT LOGIN STYLES
+   ========================================= */
 
 * {
     margin: 0;
@@ -20,7 +20,6 @@
     --bg-card: #ffffff;
     --success: #16a34a;
     --success-bg: #f0fdf4;
-    --success-border: #bbf7d0;
     --danger: #dc2626;
     --radius-sm: 6px;
     --radius-md: 10px;
@@ -41,7 +40,7 @@ body {
 
 /* =========================================
    NAVBAR
-========================================= */
+   ========================================= */
 
 .main-navbar {
     height: 70px;
@@ -86,54 +85,49 @@ body {
 }
 
 /* =========================================
-   PAGE CONTAINER
-========================================= */
+   LOGIN PAGE & CARD
+   ========================================= */
 
 .login-page {
-    min-height: calc(100vh - 70px);
+    min-height: calc(100vh - 130px);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(24px, 4vw, 48px) 16px;
+    padding: clamp(24px, 4vw, 56px) 16px;
 }
 
 .login-card {
     width: 100%;
-    max-width: 480px;
-    background-color: var(--bg-card);
+    max-width: 460px;
+    background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
-    padding: clamp(24px, 5vw, 40px);
+    padding: clamp(24px, 4vw, 36px);
 }
-
-/* =========================================
-   HEADER SECTION
-========================================= */
 
 .login-header {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
 }
 
-.company-icon {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 16px;
+.student-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--primary-light);
     color: var(--primary);
-    border-radius: 14px;
-    font-size: 24px;
-    font-weight: 800;
+    border-radius: 12px;
+    font-size: 22px;
 }
 
 .page-label {
     display: inline-block;
     color: var(--primary);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.2px;
@@ -141,206 +135,166 @@ body {
 }
 
 .login-header h1 {
-    font-size: 26px;
-    font-weight: 800;
     color: var(--navy);
+    font-size: 24px;
+    font-weight: 800;
     letter-spacing: -0.5px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .login-description {
-    font-size: 14px;
     color: var(--text-muted);
+    font-size: 13.5px;
     line-height: 1.5;
 }
 
 /* =========================================
-   FORM STYLES
-========================================= */
+   FORM ELEMENTS
+   ========================================= */
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
 
 .form-group {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .form-group label {
-    display: block;
+    color: var(--navy);
     font-size: 13px;
     font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 8px;
 }
 
-.form-group input[type="email"],
-.form-group input[type="password"],
-.password-wrapper input {
-    width: 100%;
-    height: 46px;
-    padding: 10px 14px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--text-main);
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.form-group input::placeholder,
-.password-wrapper input::placeholder {
-    color: #94a3b8;
-}
-
-.form-group input:focus,
-.password-wrapper input:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-/* Password Toggle */
-.password-wrapper {
+.input-wrapper {
     position: relative;
     display: flex;
     align-items: center;
 }
 
-.password-wrapper input {
-    padding-right: 64px;
+.input-wrapper input {
+    width: 100%;
+    height: 46px;
+    padding: 0 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.password-toggle {
+.input-wrapper input::placeholder {
+    color: #94a3b8;
+}
+
+.input-wrapper input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.toggle-password {
     position: absolute;
     right: 12px;
-    background: transparent;
+    background: none;
     border: none;
-    color: var(--primary);
+    color: var(--text-muted);
     font-size: 13px;
-    font-weight: 600;
     cursor: pointer;
-    padding: 6px;
 }
 
-.password-toggle:hover {
-    color: var(--primary-hover);
-}
-
-/* Login Options */
-.login-options {
+.form-options {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 24px;
     font-size: 13px;
 }
 
 .remember-me {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 8px;
     color: var(--text-muted);
     cursor: pointer;
-    user-select: none;
 }
 
 .remember-me input {
-    width: 16px;
-    height: 16px;
     accent-color: var(--primary);
-    cursor: pointer;
+    width: 15px;
+    height: 15px;
 }
 
 .forgot-password {
     color: var(--primary);
-    font-weight: 600;
     text-decoration: none;
-    transition: color 0.2s ease;
+    font-weight: 600;
 }
 
 .forgot-password:hover {
-    color: var(--primary-hover);
     text-decoration: underline;
 }
 
-/* Submit Button */
-.login-btn {
+.submit-btn {
     width: 100%;
     height: 48px;
-    background-color: var(--primary);
-    color: #ffffff;
+    margin-top: 4px;
     border: none;
     border-radius: var(--radius-md);
-    font-size: 15px;
-    font-weight: 700;
+    background: var(--primary);
+    color: #ffffff;
     font-family: inherit;
+    font-size: 14.5px;
+    font-weight: 700;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
     transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
 }
 
-.login-btn:hover {
-    background-color: var(--primary-hover);
+.submit-btn:hover {
+    background: var(--primary-hover);
     box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);
 }
 
-.login-btn:active {
+.submit-btn:active {
     transform: translateY(1px);
 }
 
-/* Register link */
-.register-link {
-    margin-top: 24px;
+.login-footer {
     text-align: center;
-    font-size: 14px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border-color);
+    font-size: 13px;
     color: var(--text-muted);
 }
 
-.register-link a {
+.login-footer a {
     color: var(--primary);
     font-weight: 700;
     text-decoration: none;
-    margin-left: 4px;
 }
 
-.register-link a:hover {
+.login-footer a:hover {
     text-decoration: underline;
 }
 
-/* Verification Note */
-.verification-message {
-    margin-top: 28px;
-    padding: 14px 16px;
-    background-color: var(--success-bg);
-    border: 1px solid var(--success-border);
-    border-radius: var(--radius-md);
-    font-size: 13px;
-    color: #15803d;
-    line-height: 1.5;
-}
-
-.verification-message strong {
-    display: block;
-    color: #166534;
-    margin-bottom: 2px;
-}
-
 /* =========================================
-   RESPONSIVE DESIGN
-========================================= */
+   FOOTER
+   ========================================= */
 
-@media (max-width: 640px) {
-    .main-navbar {
-        height: 60px;
-    }
-
-    .navbar-links {
-        display: none;
-    }
-
-    .login-card {
-        padding: 24px 18px;
-    }
-
-    .login-header h1 {
-        font-size: 22px;
-    }
+.main-footer {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-muted);
+    font-size: 13px;
 }
